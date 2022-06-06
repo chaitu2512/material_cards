@@ -2,7 +2,7 @@ export namespace Elevated {
     export class Model {
         srcImagePath: string = undefined
         cardImageType: string = 'top'
-        cardTitleImage: string = undefined
+        cardTitleImage: string = 'left'
         needBorder: boolean = false
         borderWidth: number = 2
         borderColor: string = '#000000'

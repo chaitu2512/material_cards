@@ -63,7 +63,7 @@ build() {
       }.width(344).height(52).justifyContent(FlexAlign.Start)
     }
     .borderWidth(3)
-    .borderRadius(10 )
+    .borderRadius(10)
     .height(148)
     .margin({ bottom: 20, top :20 })
     .width(344)

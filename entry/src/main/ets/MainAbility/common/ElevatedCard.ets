@@ -11,25 +11,32 @@ build() {
       Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(344).height(192)
     }
     Row() {
-      if(this.model.cardImageType=='left'){
+      if(this.model.cardImageType=='left' || this.model.cardTitleImage =='left'){
         Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(80).height(80).padding({ left: 16, top: 16 })
       }
+//      if(this.model.cardTitleImage =='left'){
+//        Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(40).height(40).padding({ left: 16, top: 16 })
+//      }
       Column() {
         Text('Title')
           .fontSize(25)
           .fontWeight(FontWeight.Bolder)
           .padding({ top: 16, left: 16 })
           .alignSelf(ItemAlign.Start)
-        Text('SubText goes here SubText goes here SubText goes here')
+        Text('SubText goes here SubText goes here SubText ' +
+        'goes here SubText goes here SubText goes here SubText goes here')
           .fontSize(15)
           .fontWeight(FontWeight.Medium)
           .padding({ left: 16 })
           .alignSelf(ItemAlign.Start)
-      }.width(252).height(96)
-      if(this.model.cardImageType=='right'){
+      }.width(252)
+//      if(this.model.cardTitleImage=='right'){
+//        Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(40).height(40).padding({ left: 16, top: 16 })
+//      }
+      if(this.model.cardImageType=='right' || this.model.cardTitleImage=='right'){
         Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(80).height(80).padding({ left: 16, top: 16 })
       }
-    }.width(344).height(96).alignSelf(ItemAlign.Start)
+    }.width(344).alignSelf(ItemAlign.Start)
     if(this.model.cardImageType=='middle'){
       Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(344).height(192)
     }
@@ -42,7 +49,7 @@ build() {
         .backgroundColor(0x317aff)
         .width(90)
         .margin({ left: 8, top: 8, bottom: 8 })
-    }.width(344).height(52).justifyContent(FlexAlign.Start)
+    }.width(344).justifyContent(FlexAlign.Start)
     if(this.model.cardImageType=='bottom'){
       Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(344).height(192)
     }
