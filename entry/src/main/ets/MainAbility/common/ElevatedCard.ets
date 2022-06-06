@@ -1,0 +1,56 @@
+
+import {Elevated} from './Elevated'
+
+@Component
+
+export struct ElevatedCard {
+  model: Elevated.Model = new Elevated.Model()
+build() {
+  Column() {
+    if(this.model.cardImageType=='top'){
+      Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(344).height(192)
+    }
+    Row() {
+      if(this.model.cardImageType=='left'){
+        Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(80).height(80).padding({ left: 16, top: 16 })
+      }
+      Column() {
+        Text('Title')
+          .fontSize(25)
+          .fontWeight(FontWeight.Bolder)
+          .padding({ top: 16, left: 16 })
+          .alignSelf(ItemAlign.Start)
+        Text('SubText goes here SubText goes here SubText goes here')
+          .fontSize(15)
+          .fontWeight(FontWeight.Medium)
+          .padding({ left: 16 })
+          .alignSelf(ItemAlign.Start)
+      }.width(252).height(96)
+      if(this.model.cardImageType=='right'){
+        Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(80).height(80).padding({ left: 16, top: 16 })
+      }
+    }.width(344).height(96).alignSelf(ItemAlign.Start)
+    if(this.model.cardImageType=='middle'){
+      Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(344).height(192)
+    }
+    Row() {
+      Button('Action 1', { type: ButtonType.Capsule, stateEffect: true })
+        .backgroundColor(0x317aff)
+        .width(90)
+        .margin({ left: 8, top: 8, bottom: 8 })
+      Button('Action 2', { type: ButtonType.Capsule, stateEffect: true })
+        .backgroundColor(0x317aff)
+        .width(90)
+        .margin({ left: 8, top: 8, bottom: 8 })
+    }.width(344).height(52).justifyContent(FlexAlign.Start)
+    if(this.model.cardImageType=='bottom'){
+      Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(344).height(192)
+    }
+  }
+  .borderWidth(3)
+  .borderRadius(10)
+  .margin({ bottom: 20, top: 20 })
+  .width(344)
+  .backgroundColor('#ffabe9b9')
+}
+}

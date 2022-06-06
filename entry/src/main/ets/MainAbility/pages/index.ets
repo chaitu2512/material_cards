@@ -2,10 +2,12 @@
 // @ts-ignore
 import {SubHead} from '../common/SubHead'
 import {SubHeadCard} from '../common/SubHeadCard'
+import {Elevated} from '../common/Elevated'
+import {ElevatedCard} from '../common/ElevatedCard'
 @Entry
 @Component
 struct Index {
-
+  model : Elevated.Model = new Elevated.Model()
 //  model : SubHead.Model = new SubHead.Model()
 //  aboutToAppear(){
 //    this.model.setBorderWidth(1)
@@ -26,6 +28,11 @@ build() {
   //      }
   //    }.borderWidth(2).borderRadius(10).height(100).margin({bottom: 20}).width(320).backgroundColor('#ffffc6');
   Column() {
+         Column(){
+        ElevatedCard({
+        model : this.model
+          })
+         }.width('100%')
     Column() {
       Row() {
         Column() {
@@ -60,8 +67,9 @@ build() {
     .height(148)
     .margin({ bottom: 20, top :20 })
     .width(344)
-    .backgroundColor('#ffabe9b9')
+    .backgroundColor('#ffa2ea82')
     Column(){
+
       Row(){
         Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(40).height(40).margin({ left: 16, top: 16 ,bottom :16 })
         Column() {
@@ -77,7 +85,7 @@ build() {
             .alignSelf(ItemAlign.Start)
         }.width(252).height(72)
       }.height(72).width(344).alignSelf(ItemAlign.Start)
-      Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(344).height(194)
+
       Text('SubText goes here Sub Text goes here SubText goes here')
             .fontSize(16)
             .fontWeight(FontWeight.Medium)
