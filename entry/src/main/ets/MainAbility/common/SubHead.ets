@@ -1,7 +1,7 @@
 export namespace SubHead {
   export class Model {
-    srcImagePath: string ='app.media.icon'
-    needBorder: boolean = false
+    private srcImagePath: string = undefined
+    private needBorder: boolean = false
     borderWidth: number = 2
     borderColor: string = '#000000'
     cardLength: number = 320
@@ -14,8 +14,11 @@ export namespace SubHead {
     borderRadius : number = 10
     bottomMargin :number =20
 
-    setSrcPath(srcPathParam: string): Model {
-      this.srcPath = srcPathParam
+    getSrcPath() : string{
+      return this.srcImagePath
+    }
+    setSrcPath(srcPathParam: string) {
+      this.srcImagePath = srcPathParam
       return this
     }
 
