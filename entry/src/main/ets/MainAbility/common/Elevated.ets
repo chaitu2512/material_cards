@@ -3,6 +3,7 @@ export namespace Elevated {
         srcImagePath: string = undefined
         cardImageType: string = 'top'
         cardTitleImage: string = 'left'
+        needOverLine : boolean = false
         needBorder: boolean = false
         borderWidth: number = 2
         borderColor: string = '#000000'
@@ -18,5 +19,6 @@ export namespace Elevated {
         imageposition: string = 'left'
         action1: string = undefined
         action2: string = undefined
+
     }
 }
