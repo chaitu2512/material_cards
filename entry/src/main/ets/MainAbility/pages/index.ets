@@ -32,7 +32,7 @@ build() {
         ElevatedCard({
         model : this.model
           })
-         }.width('100%')
+         }.width('100%' )
 //    Column() {
 //      Row() {
 //        Column() {
