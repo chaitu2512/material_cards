@@ -18,36 +18,41 @@ build() {
 //        Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(40).height(40).padding({ left: 16, top: 16 })
 //      }
       Column() {
-        Text('OVERLINE')
-          .fontSize(15)
-          .fontWeight(FontWeight.Bold)
-          .padding({ top: 16, left: 16 })
-          .alignSelf(ItemAlign.Start)
-        Text('Title')
+        if(this.model.needOver) {
+          Text(this.model.overLineText)
+            .fontSize(15)
+            .fontWeight(FontWeight.Bold)
+            .padding({ top: 16, left: 16 })
+            .alignSelf(ItemAlign.Start)
+        }
+        Text(this.model.titleText)
           .fontSize(25)
           .fontWeight(FontWeight.Bolder)
           .padding({left: 16 })
           .alignSelf(ItemAlign.Start)
-        Text('Secondary Text')
-          .fontSize(16)
-          .fontWeight(FontWeight.Normal)
-          .padding({left: 16 })
-          .alignSelf(ItemAlign.Start)
-        Text('SubText goes here SubText goes here SubText ' +
-        'goes here SubText goes here SubText goes here SubText goes here')
-          .fontSize(15)
-          .fontWeight(FontWeight.Medium)
-          .margin({ left: 16 ,top : 8 })
-          .alignSelf(ItemAlign.Start)
-      }.width(252)
+        if(this.model.needSecondaryText) {
+          Text(this.model.secondaryText)
+            .fontSize(this.model.secondaryTextFontSize)
+            .fontWeight(FontWeight.Normal)
+            .padding({ left: 16 })
+            .alignSelf(ItemAlign.Start)
+        }
+        if(this.model.needSubText) {
+          Text(this.model.subText)
+            .fontSize(this.model.subTextFontSize)
+            .fontWeight(FontWeight.Medium)
+            .margin({ left: 16, top: 8 })
+            .alignSelf(ItemAlign.Start)
+        }
+      }.width('74%')
 //      if(this.model.cardTitleImage=='right'){
 //        Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(40).height(40).padding({ left: 16, top: 16 })
 //      }
       if(this.model.cardImageType=='right' || this.model.cardTitleImage=='right'){
         Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(80).height(80).padding({ left: 16, top: 16 })
       }
-    }.width(344)
-    //.alignSelf(ItemAlign.Start)
+    }.width(this.model.cardWidth)
+    .alignSelf(ItemAlign.Start)
     if(this.model.cardImageType=='middle'){
       Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(344).height(192)
     }
@@ -57,16 +62,48 @@ build() {
 //
 //      }
 //    }
+
+    Divider().margin({top:8,left :16 ,right :16}).strokeWidth(1)
+    Column(){
+    Text('Subtitle').margin({top :16 , left :16 ,right : 8}).fontWeight(FontWeight.Normal).fontSize(20).alignSelf(ItemAlign.Start)
+    Flex({ wrap: FlexWrap.Wrap }){
+      Button('Item 1', { type: ButtonType.Capsule, stateEffect: true })
+        .backgroundColor(0x317aff)
+        .width(90)
+        .margin({ left: 8, top: 8 ,bottom: 8 })
+      Button('Item 2', { type: ButtonType.Capsule, stateEffect: true })
+        .backgroundColor(0x317aff)
+        .width(90)
+        .margin({ left: 8, top: 8, bottom: 8 })
+      Button('Item 3', { type: ButtonType.Capsule, stateEffect: true })
+        .backgroundColor(0x317aff)
+        .width(90)
+        .margin({ left: 8, top: 8, bottom: 8 })
+      Button('Item 4', { type: ButtonType.Capsule, stateEffect: true })
+        .backgroundColor(0x317aff)
+        .width(90)
+        .margin({ left: 8, top: 8, bottom: 8 })
+      Button('Item 5', { type: ButtonType.Capsule, stateEffect: true })
+        .backgroundColor(0x317aff)
+        .width(90)
+        .margin({ left: 8, top: 8, bottom: 8 })
+    }.width(this.model.cardWidth)
+    }.width(this.model.cardWidth)
+
     Row() {
-      Button('Action 1', { type: ButtonType.Capsule, stateEffect: true })
-        .backgroundColor(0x317aff)
-        .width(90)
-        .margin({ left: 8, top: 16, bottom: 16 })
-      Button('Action 2', { type: ButtonType.Capsule, stateEffect: true })
-        .backgroundColor(0x317aff)
-        .width(90)
-        .margin({ left: 8, top: 16, bottom: 16 })
-    }.width(344).justifyContent(FlexAlign.Start)
+      if(this.model.needAction1) {
+        Button('Action 1', { type: ButtonType.Capsule, stateEffect: true })
+          .backgroundColor(0x317aff)
+          .width(90)
+          .margin({ left: 8, top: 16, bottom: 16 })
+      }
+      if(this.model.needAction2) {
+        Button('Action 2', { type: ButtonType.Capsule, stateEffect: true })
+          .backgroundColor(0x317aff)
+          .width(90)
+          .margin({ left: 8, top: 16, bottom: 16 })
+      }
+    }.width(this.model.cardWidth).justifyContent(FlexAlign.Start)
     if(this.model.cardImageType=='bottom'){
       Image($r("app.media.icon")).objectFit(ImageFit.Cover).width(344).height(192)
     }
@@ -74,7 +111,7 @@ build() {
   .borderWidth(3)
   .borderRadius(10)
   .margin({ bottom: 20, top: 20 })
-  .width(344)
-  .backgroundColor('#fff4ffd1')
+  .width(this.model.cardWidth)
+  .backgroundColor(this.model.backGroundColor)
 }
 }
