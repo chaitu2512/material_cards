@@ -4,15 +4,15 @@
 //import {SubHeadCard} from '../common/SubHeadCard'
 import {Elevated} from '../common/Elevated'
 import {ElevatedCard} from '../common/ElevatedCard'
+import {button} from '../common/button'
 @Entry
 @Component
 struct Index {
   model : Elevated.Model = new Elevated.Model()
 //  model : SubHead.Model = new SubHead.Model()
-//  aboutToAppear(){
-//    this.model.setBorderWidth(1)
-//    this.model.setSrcPath('app.media.icon')
-//  }
+  aboutToAppear(){
+    this.model.buttonArray[0] = new button.Model('#ffa2ea82','Item1','#ff7e3636',ButtonType.Capsule,30,90)
+  }
 //  build() {
 //    Column(){
 //    SubHeadCard({
