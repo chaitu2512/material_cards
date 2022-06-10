@@ -6,12 +6,14 @@ export namespace button {
     buttonType : ButtonType = undefined
     buttonHeight : number =undefined
     buttonWidth : number = undefined
+    fontSize : number = undefined
     constructor(buttonColor : string , buttonText : string ,
-                buttonTextColor : string, buttonType: ButtonType ,
-                buttonHeight :number , buttonWidth : number){
+                buttonTextColor : string, fontSize : number,buttonType: ButtonType ,
+                buttonHeight :number , buttonWidth : number,){
       this.buttonColor= buttonColor
       this.buttonText = buttonText
       this.buttonTextColor = buttonTextColor
+      this.fontSize = fontSize
       this.buttonType =buttonType
       this.buttonHeight = buttonHeight
       this.buttonWidth =buttonWidth

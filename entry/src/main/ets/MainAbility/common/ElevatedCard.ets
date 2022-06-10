@@ -71,15 +71,28 @@ build() {
           .fontWeight(FontWeight.Normal)
           .fontSize(20)
           .alignSelf(ItemAlign.Start)
-
-        Flex({ wrap: FlexWrap.Wrap }) {
-          Button('Item 1', { type: this.model.buttonArray[0].buttonType, stateEffect: true })
-            .backgroundColor(this.model.buttonArray[0].buttonColor)
-            .width(this.model.buttonArray[0].buttonWidth)
-            .height(this.model.buttonArray[0].buttonHeight)
-            .margin({ left: 16, top: 8, bottom: 8 })
-            .borderRadius(8)
-          .fontColor(this.model.buttonArray[0].buttonTextColor)
+          Grid() {
+            ForEach(this.model.buttonArray, (item) => {
+              GridItem() {
+                Text('day')
+                  .fontSize(16)
+                  .backgroundColor(0xF9CF93)
+                  .width('100%')
+                  .height('100%')
+                  .textAlign(TextAlign.Center)
+//                Button('Item 1', { type: item.buttonType, stateEffect: true })
+//                  .backgroundColor(item.buttonColor)
+//                  .width(item.buttonWidth)
+//                  .height(item.buttonHeight)
+//                  .margin({ left: 16, top: 8, bottom: 8 })
+//                  .borderRadius(8)
+//                  .fontColor(item.buttonTextColor)
+              }
+            },item => item)
+          }.columnsTemplate('1fr 1fr')
+          .rowsTemplate('1fr 1fr')
+          .width('90%')
+          .height(100)
 //          Button('Item 3', { type: ButtonType.Normal, stateEffect: true })
 //            .backgroundColor('#ff000000')
 //            .width(90)
@@ -109,14 +122,16 @@ build() {
 //            .backgroundColor(Color.Orange)
 //            .borderRadius(8)
         }.width(this.model.cardWidth)
-      }.width(this.model.cardWidth)
     }
     Row() {
-      if(this.model.needAction1) {
-        Button('Action 1', { type: ButtonType.Capsule, stateEffect: true })
-          .backgroundColor(0x317aff)
-          .width(90)
+      if(this.model.action1!=undefined) {
+        Button(this.model.action1.buttonText, { type: this.model.action1.buttonType, stateEffect: true })
+          .backgroundColor(this.model.action1.buttonColor)
+          .width(this.model.action1.buttonWidth)
           .margin({ left: 8, top: 16, bottom: 16 })
+          .height(this.model.action1.buttonHeight)
+          .fontColor(this.model.action1.buttonTextColor)
+          .fontSize(this.model.action1.fontSize)
       }
       if(this.model.needAction2) {
         Button('Action 2', { type: ButtonType.Capsule, stateEffect: true })

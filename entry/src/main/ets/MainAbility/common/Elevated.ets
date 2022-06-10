@@ -29,13 +29,10 @@ export namespace Elevated {
         needAction2 : boolean =true
         needSecondaryText : boolean =true
         needSubText : boolean = true
-        action1: string = undefined
-        action2: string = undefined
+        action1: button.Model = undefined
+        action2: button.Model = undefined
         needOver : boolean = false
         needSubTitle : boolean = true
-        actionButtonWidth : number = 90
-        subTitleItemButtonWidth : number =90
-        subTitleItems : string[] = ['Item 1', 'Item 2', 'Item 3']
         buttonArray : button.Model[] = []
     }
 }

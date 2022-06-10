@@ -11,7 +11,10 @@ struct Index {
   model : Elevated.Model = new Elevated.Model()
 //  model : SubHead.Model = new SubHead.Model()
   aboutToAppear(){
-    this.model.buttonArray[0] = new button.Model('#ffa2ea82','Item1','#ff7e3636',ButtonType.Capsule,30,90)
+    this.model.buttonArray[0] = new button.Model('#ffa2ea82','Item1','#ff7e3636',10,ButtonType.Capsule,30,90)
+    this.model.buttonArray[1] = new button.Model('#ffa2ea82','Item1','#ff7e3636',10,ButtonType.Capsule,30,90)
+    this.model.buttonArray[2] = new button.Model('#ffa2ea82','Item1','#ff7e3636',10,ButtonType.Capsule,30,90)
+    this.model.action1 = new button.Model('#8bff25b8','Item1','#ff000000',18,ButtonType.Capsule,40,120)
   }
 //  build() {
 //    Column(){
