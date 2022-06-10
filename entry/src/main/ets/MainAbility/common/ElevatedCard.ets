@@ -133,7 +133,15 @@ build() {
           .fontColor(this.model.action1.buttonTextColor)
           .fontSize(this.model.action1.fontSize)
       }
-      if(this.model.needAction2) {
+      if(this.model.action2.isText) {
+          Text(this.model.action2.buttonText)
+            .fontColor(this.model.action2.buttonTextColor)
+            .fontSize(this.model.action2.fontSize)
+            .fontWeight(FontWeight.Bold)
+            .width(90)
+            .margin({ left: 8, top: 16, bottom: 16 })
+      }
+      else{
         Button('Action 2', { type: ButtonType.Capsule, stateEffect: true })
           .backgroundColor(0x317aff)
           .width(90)
