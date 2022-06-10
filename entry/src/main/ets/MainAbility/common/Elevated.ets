@@ -3,6 +3,11 @@ import {button} from './button'
 export namespace Elevated {
     export class Model {
         srcImagePath: string = undefined
+        cardImageWidth :number = 300
+        cardImageHeight : number =180
+        cardImageMargin: number = 16
+        cardImageBorderWidth : number = 3
+        cardImageBorderColor : string ='#ffd71111'
         cardImageType: string = 'top'
         cardTitleImage: string = 'left'
         needOverLine : boolean = true
@@ -10,15 +15,16 @@ export namespace Elevated {
         borderWidth: number = 4
         borderColor: string = '#ffc86d6d'
         cardWidth: number = 344
-        cardHeight: number = 600
+        cardHeight: number = 800
         titleText: string = 'BRAVE'
         subText: string = 'SubText goes here SubText goes here SubText ' +
-          'goes here SubText goes here SubText goes here SubText goes here'
+          'goes here SubText goes here SubText goes here SubText goes here '+
+            'goes here SubText goes here SubText goes here SubText goes here'
         subTextFontSize : number = 15
         secondaryTextFontSize : number = 15
         subTitleText :string = 'Subtitle'
         overLineText :string = 'OVERLINE'
-        secondaryText : string = 'Secondary Text'
+        secondaryText : string = 'Secondary Text Secondary Text Secondary TextSecondary Text Secondary Text '
         textFontSize: number = 25
         subTextFontSize: number = 15
         backGroundColor: string = '#ffffcbcb'
@@ -31,7 +37,7 @@ export namespace Elevated {
         needSubText : boolean = true
         action1: button.Model = undefined
         action2: button.Model = undefined
-        needOver : boolean = false
+        needOver : boolean = true
         needSubTitle : boolean = true
         buttonArray : button.Model[] = []
     }

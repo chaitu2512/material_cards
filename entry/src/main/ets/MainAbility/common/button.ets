@@ -1,6 +1,7 @@
 export namespace button {
   export class Model {
-    isText : boolean = false
+    isText : boolean
+    buttonId : number = 0
     buttonColor : string = undefined
     buttonText  : string = undefined
     buttonTextColor : string =undefined
@@ -8,9 +9,14 @@ export namespace button {
     buttonHeight : number = 90
     buttonWidth : number = 30
     fontSize : number = 15
-    constructor(isText : boolean , buttonText : string ,
-                buttonTextColor : string ,buttonColor : string , fontSize : number,buttonType: ButtonType =ButtonType.Capsule,
-                buttonHeight :number = 90, buttonWidth : number=30){
+    constructor(isText : boolean ,
+                buttonText : string ,
+                buttonTextColor : string ,
+                buttonColor : string ,
+                fontSize : number,
+                buttonType: ButtonType =ButtonType.Capsule,
+                buttonHeight :number = 90,
+                buttonWidth : number=30){
       this.isText= isText
       this.buttonText = buttonText
       this.buttonTextColor = buttonTextColor
