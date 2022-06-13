@@ -7,8 +7,8 @@ export namespace Elevated {
         cardImageHeight : number =180
         cardImageMargin: number = 16
         cardImageBorderWidth : number = 3
-        cardImageBorderColor : string ='#ffd71111'
-        cardImageType: string = 'top'
+        cardImageBorderColor : string ='#ff43f31d'
+        cardImageType: string = 'middle'
         cardTitleImage: string = 'left'
         needOverLine : boolean = true
         needBorder: boolean = true
@@ -17,18 +17,16 @@ export namespace Elevated {
         cardWidth: number = 344
         cardHeight: number = 700
         titleText: string = 'BRAVE'
-        numberOfSubtitleButton = 3
-        subText: string = 'SubText goes here SubText goes here SubText ' +
-          'goes here SubText goes here SubText goes here SubText goes here '+
-            'goes here SubText goes here SubText goes here SubText goes here'
+        numberOfSubtitleButton = 6
+        subText: string = 'Determined to make her own path in life, Princess Merida defies a custom that brings chaos to her kingdom. Granted one wish, Merida must rely on her bravery and her archery skills to undo a beastly curse.'
         subTextFontSize : number = 15
         secondaryTextFontSize : number = 15
         subTitleText :string = 'Subtitle'
-        overLineText :string = 'OVERLINE'
+        overLineText :string = 'ANIMATED MOVIE'
         secondaryText : string = 'A Walt-Disney Film'
         textFontSize: number = 25
         subTextFontSize: number = 15
-        backGroundColor: string = '#9ee3cf81'
+        backGroundColor: string = '#708b54ba'
         borderRadius: number = 10
         bottomMargin: number = 20
         imagePosition: string = 'left'

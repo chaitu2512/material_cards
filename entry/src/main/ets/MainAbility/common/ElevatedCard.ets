@@ -6,9 +6,13 @@ import {Elevated} from './Elevated'
 export struct ElevatedCard {
 
   model: Elevated.Model = new Elevated.Model()
-  gridString : string = '1fr 1fr 1fr '
+  gridString : string = ''
+  aboutToAppear(){
+    for (var index = 0; index < Math.floor((this.model.numberOfSubtitleButton-1)/3)+1; index++) {
+      this.gridString+='1fr '
+    }
+  }
   build() {
-
       Column() {
         if (this.model.cardImageType == 'top') {
           Image($r("app.media.brave"))
@@ -62,8 +66,11 @@ export struct ElevatedCard {
         if (this.model.cardImageType == 'middle') {
           Image($r("app.media.brave"))
             .objectFit(ImageFit.Cover)
-            .width(this.model.cardWidth)
-            .height(192)
+            .width(this.model.cardImageWidth)
+            .height(this.model.cardImageHeight)
+            .margin(16)
+            .borderWidth(this.model.cardImageBorderWidth)
+            .borderColor(this.model.cardImageBorderColor)
         }
         Row() {
           if (this.model.needSubText) {
@@ -97,7 +104,7 @@ export struct ElevatedCard {
               }, item => item.buttonId)
             }
             .columnsTemplate('1fr 1fr 1fr')
-            .rowsTemplate('1fr 1fr 1fr')
+            .rowsTemplate(this.gridString)
             .width('90%')
             .height(100)
             .columnsGap(5)
