@@ -15,8 +15,9 @@ export namespace Elevated {
         borderWidth: number = 4
         borderColor: string = '#ffc86d6d'
         cardWidth: number = 344
-        cardHeight: number = 800
+        cardHeight: number = 700
         titleText: string = 'BRAVE'
+        numberOfSubtitleButton = 3
         subText: string = 'SubText goes here SubText goes here SubText ' +
           'goes here SubText goes here SubText goes here SubText goes here '+
             'goes here SubText goes here SubText goes here SubText goes here'
@@ -24,10 +25,10 @@ export namespace Elevated {
         secondaryTextFontSize : number = 15
         subTitleText :string = 'Subtitle'
         overLineText :string = 'OVERLINE'
-        secondaryText : string = 'Secondary Text Secondary Text Secondary TextSecondary Text Secondary Text '
+        secondaryText : string = 'A Walt-Disney Film'
         textFontSize: number = 25
         subTextFontSize: number = 15
-        backGroundColor: string = '#ffffcbcb'
+        backGroundColor: string = '#9ee3cf81'
         borderRadius: number = 10
         bottomMargin: number = 20
         imagePosition: string = 'left'

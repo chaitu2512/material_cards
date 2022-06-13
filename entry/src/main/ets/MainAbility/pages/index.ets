@@ -9,6 +9,7 @@ import {button} from '../common/button'
 @Component
 struct Index {
   model : Elevated.Model = new Elevated.Model()
+  scroller: Scroller = new Scroller()
 //  model : SubHead.Model = new SubHead.Model()
   aboutToAppear(){
     this.model.buttonArray[0] = new button.Model(false,'Item1','#ff7e3636', '#ffd4ff61',10,ButtonType.Capsule,30,90)
@@ -18,11 +19,14 @@ struct Index {
     this.model.buttonArray[4] = new button.Model(false,'Item3', '#ffffdede', '#ff000000',10,ButtonType.Capsule,30,90)
     this.model.buttonArray[5] = new button.Model(false,'Item3','#ff7e3636','#ffa2ea82',10,ButtonType.Capsule,30,90)
     this.model.buttonArray[6] = new button.Model(false,'Item3','#ff7e3636','#ffa2ea82',10,ButtonType.Capsule,30,90)
-    this.model.action2 = new button.Model(false,'Item1','#ff7e3636','#ffa2ea82',20)
     this.model.buttonArray[7] = new button.Model(false,'Item3','#ffffdede','#ff000000',10,ButtonType.Capsule,30,90)
     this.model.buttonArray[8] = new button.Model(false,'Item3','#ffffdede','#ff000000',10,ButtonType.Capsule,30,90)
+    this.model.action2 = new button.Model(false,'Action','#ff7e3636','#ffa2ea82',20)
+    this.model.action1 = new button.Model(false,'Action 1','#ff7e3636','#ffa2ea82',20)
+
   }
   build() {
+    Scroll(this.scroller) {
       Column() {
          Column(){
             ElevatedCard({
@@ -30,5 +34,8 @@ struct Index {
               })
          }.width('100%' )
     }.width('100%')
+    }
+    .scrollable(ScrollDirection.Vertical).scrollBar(BarState.On)
+    .scrollBarColor(Color.Gray).scrollBarWidth(30)
   }
 }
