@@ -45,16 +45,16 @@ export struct MaterialCard {
         Text(this.model.getSupportingText())
           .fontSize(15)
           .fontWeight(FontWeight.Normal)
-          .margin(16)
+          .margin(8)
           .alignSelf(ItemAlign.Start)
       }
       if(this.model.getShowDivider()){
-        Divider().margin(4).strokeWidth(1)
+        Divider().strokeWidth(1)
       }
       if(this.model.getButtons().length!=0){
         Column() {
           Text(this.model.getButtonHeader())
-            .margin({ top: 16, left: 16 })
+            .margin({ top: 16, left: 16, bottom : 4})
             .fontWeight(FontWeight.Bold)
             .fontSize(22)
             .alignSelf(ItemAlign.Start)
@@ -81,7 +81,7 @@ export struct MaterialCard {
       }
 
     }
-    .borderWidth(this.model.getCardType()==CardType.Outlined?this.model.getCardBorderWidth():0)
+    .borderWidth(this.model.getCardType()==CardType.Outlined?this.model.getCardBorderWidth():1)
     .borderRadius(this.model.getBorderRadius())
     .margin({ top: 16 })
     .height(this.model.getCardHeight())

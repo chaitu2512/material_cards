@@ -10,7 +10,7 @@ class Properties {
   private cardType: CardType = CardType.Normal
   private cardBorderWidth: number = 2
   private cardBorderColor: string | Color | ResourceColor = Color.Blue
-  private borderRadius : number = 8
+  private borderRadius : number = 12
   private cardBackgroundColor: string | Color | ResourceColor = Color.White
   private shadowColor: string | Color | ResourceColor = Color.Grey
   private shadowRadius : number = 20
