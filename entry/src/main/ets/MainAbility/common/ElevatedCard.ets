@@ -52,14 +52,14 @@ export struct ElevatedCard {
                 .padding({ left: 16 })
                 .alignSelf(ItemAlign.Start)
             }
-            if (this.model.cardTitleImage == 'right') {
-              Image($r("app.media.disneylogo"))
-                .objectFit(ImageFit.Cover)
-                .width(80)
-                .height(80)
-                .padding({ left: 16, top: 16 })
-            }
-          }.width('74%')
+          }.width('50%')
+          if (this.model.cardTitleImage == 'right') {
+            Image($r("app.media.disneylogo"))
+              .objectFit(ImageFit.Cover)
+              .width(80)
+              .height(80)
+              .padding({ left: 16, top: 16 ,right : 16})
+          }
         }.width(this.model.cardWidth)
         .alignSelf(ItemAlign.Start)
 
@@ -160,5 +160,6 @@ export struct ElevatedCard {
       .width(this.model.cardWidth)
       .backgroundColor(this.model.backGroundColor)
       .borderColor(this.model.borderColor)
+      .shadow({radius:50})
 }
 }
