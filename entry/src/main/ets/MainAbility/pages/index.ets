@@ -25,6 +25,8 @@ struct Index {
     this.model.setShowDivider(true)
     this.model.setButtonHeader('Buttons')
     this.model.setSupportingText("Determined to make her own path in life, Princess Merida defies a custom that brings chaos to her kingdom. Granted one wish, Merida ")
+    this.model.setShadowColor('#ffd93298')
+    this.model.setShadowRadius(40)
   }
   build() {
     Scroll(this.scroller) {

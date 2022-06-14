@@ -88,6 +88,7 @@ export struct MaterialCard {
     .width(this.model.getCardWidth())
     .backgroundColor(this.model.getCardBackgroundColor())
     .borderColor(this.model.getCardBorderColor())
-    .shadow({radius : this.model.getCardType() == CardType.Elevated ? this.model.getShadowRadius() : 0,})
+    .shadow({radius : this.model.getCardType() == CardType.Elevated ? this.model.getShadowRadius() : 0,
+              color : this.model.getShadowColor()})
   }
 }
