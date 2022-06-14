@@ -178,15 +178,15 @@ export class CardModel extends Properties {
   getButtonHeader() : string | Resource{
     return this.buttonHeader
   }
-  setButtons(buttons : button.Model , index : number ) : CardModel{
-    this.buttons[index] = buttons
+  setButtons(buttons : button.Model[]) : CardModel{
+    this.buttons = buttons
     return this
   }
   getButtons() : button.Model[]{
     return this.buttons
   }
-  setActions(actions : button.Model , index : number )  : CardModel{
-    this.actions[index] = actions
+  setActions(actions : button.Model[])  : CardModel{
+    this.actions = actions
     return this
   }
   getActions()  : button.Model[]{

@@ -4,9 +4,13 @@ import { CardModel, CardType } from './cardModel'
 export struct MaterialCard {
   @State private model: CardModel = undefined
   gridString : string = ''
+  actionString : string = ''
   aboutToAppear(){
     for (var index = 0; index < Math.floor((this.model.getButtons().length-1)/3)+1; index++) {
       this.gridString+='1fr '
+    }
+    for (var index = 0; index < Math.floor((this.model.getActions().length-1)/3)+1; index++) {
+      this.actionString+='1fr '
     }
   }
   build() {
@@ -79,9 +83,27 @@ export struct MaterialCard {
           .rowsGap(5)
         }.width(this.model.getMediaIconWidth())
       }
-
+      Grid() {
+        ForEach(this.model.getActions(), (item) => {
+          GridItem() {
+            Button(item.buttonText, { type: item.buttonType, stateEffect: true })
+              .backgroundColor(item.buttonColor)
+              .width(item.buttonWidth)
+              .height(item.buttonHeight)
+              .margin({ left: 4, top: 8, bottom: 8 })
+              .borderRadius(8)
+              .fontColor(item.buttonTextColor)
+          }
+        }, item => item.buttonId)
+      }
+      .columnsTemplate('1fr 1fr 1fr')
+      .rowsTemplate(this.actionString)
+      .width('90%')
+      .height(70)
+      .columnsGap(5)
+      .rowsGap(5)
     }
-    .borderWidth(this.model.getCardType()==CardType.Outlined?this.model.getCardBorderWidth():1)
+    .borderWidth(this.model.getCardType()==CardType.Outlined?this.model.getCardBorderWidth():2)
     .borderRadius(this.model.getBorderRadius())
     .margin({ top: 16 })
     .height(this.model.getCardHeight())

@@ -14,18 +14,20 @@ struct Index {
   scroller: Scroller = new Scroller()
   private swiperController: SwiperController = new SwiperController()
   aboutToAppear(){
-    this.model.setButtons(new button.Model(false,'Item1','#ff7e3636', '#ff42d4aa',10,ButtonType.Capsule,30,90),0)
-    this.model.setButtons(new button.Model(false,'Item1','#ff7e3636', '#ff42d4aa',10,ButtonType.Capsule,30,90),1)
-    this.model.setButtons(new button.Model(false,'Item1','#ff7e3636', '#ff42d4aa',10,ButtonType.Capsule,30,90),2)
-    this.model.setButtons(new button.Model(false,'Item1','#ff7e3636', '#ff42d4aa',10,ButtonType.Capsule,30,90),3)
+    this.model.setButtons([new button.Model(false,'Item1','#ff7e3636', '#ff42d4aa',10,ButtonType.Capsule,30,90),
+                            new button.Model(false,'Item2','#ff7e3636', '#ff42d4aa',10,ButtonType.Capsule,30,90),
+                            new button.Model(false,'Item3','#ff7e3636', '#ff42d4aa',10,ButtonType.Capsule,30,90),
+                            new button.Model(false,'Item4','#ff7e3636', '#ff42d4aa',10,ButtonType.Capsule,30,90)])
+    this.model.setActions([new button.Model(false,'Action1','#ff7e3636', '#fff3bb45',10,ButtonType.Capsule,30,90),
+                            new button.Model(false,'Action2','#ff7e3636', '#fff3bb45',10,ButtonType.Capsule,30,90),])
     this.model.setCardType(CardType.Elevated)
     this.model.setLeadingIcon('app.media.disneylogo')
     this.model.setMediaIcon('app.media.disneylogo')
-    this.model.setCardHeight(500)
+    this.model.setCardHeight(550)
     this.model.setShowDivider(true)
     this.model.setButtonHeader('Buttons')
     this.model.setSupportingText("Determined to make her own path in life, Princess Merida defies a custom that brings chaos to her kingdom. Granted one wish, Merida ")
-    this.model.setShadowColor('#ffd93298')
+    this.model.setShadowColor('#ffff009d')
     this.model.setShadowRadius(40)
   }
   build() {
