@@ -37,6 +37,9 @@ struct Index {
     this.subHead.setLeadingIcon($r('app.media.disneylogo'))
     this.subHead.setCardHeight(90)
     this.subHead.setCardWidth(300)
+    this.subHead.setCardBackGroundColor('#ffece5e5')
+    this.subHead.setLeadingIconHeight(64)
+    this.subHead.setLeadingIconWidth(64)
     //Outlined Card
     this.album.setMediaIconPosition(MediaIconPosition.Top)
     this.album.setCardType(CardType.Elevated)

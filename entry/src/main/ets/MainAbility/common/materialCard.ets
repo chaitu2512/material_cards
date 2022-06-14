@@ -23,7 +23,7 @@ export struct MaterialCard {
               .objectFit(ImageFit.Cover)
               .width(this.model.getLeadingIconWidth())
               .height(this.model.getLeadingIconHeight())
-              .padding({ left: 8, top: 16, right: 8 })
+              .padding({ left: 16, top: 16, right: 8 })
         }
         Column(){
           //Title Text
@@ -40,7 +40,7 @@ export struct MaterialCard {
             .fontColor(this.model.getSubTitleFontColor())
             .margin({top : 4 , left: this.model.getLeadingIcon()== undefined ? 16 : 8})
             .alignSelf(ItemAlign.Start)
-        }.width(this.model.getMediaIconPosition()== MediaIconPosition.Right ? '60%' : '70%')
+        }.width(this.model.getMediaIconPosition()== MediaIconPosition.Right ? '60%' : '60%')
         if(this.model.getMediaIcon()!=undefined && this.model.getMediaIconPosition() == MediaIconPosition.Right) {
           Image(this.model.getMediaIcon())
             .objectFit(ImageFit.Cover)
