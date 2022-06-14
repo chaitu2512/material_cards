@@ -45,13 +45,13 @@ export struct MaterialCard {
           .height(this.model.getMediaIconHeight())
           .margin(16)
       }
-      if(this.model.getSupportingText()!=""){
+     // if(this.model.getSupportingText()!=""){
         Text(this.model.getSupportingText())
           .fontSize(15)
           .fontWeight(FontWeight.Normal)
           .margin(8)
           .alignSelf(ItemAlign.Start)
-      }
+     // }
       if(this.model.getShowDivider()){
         Divider().strokeWidth(1)
       }
@@ -62,46 +62,38 @@ export struct MaterialCard {
             .fontWeight(FontWeight.Bold)
             .fontSize(22)
             .alignSelf(ItemAlign.Start)
-          Grid() {
+          List() {
             ForEach(this.model.getButtons(), (item) => {
-              GridItem() {
+              ListItem() {
                 Button(item.buttonText, { type: item.buttonType, stateEffect: true })
                   .backgroundColor(item.buttonColor)
                   .width(item.buttonWidth)
                   .height(item.buttonHeight)
-                  .margin({ left: 16, top: 8, bottom: 8 })
+                  .margin(8)
                   .borderRadius(8)
                   .fontColor(item.buttonTextColor)
               }
             }, item => item.buttonId)
           }
-          .columnsTemplate('1fr 1fr 1fr')
-          .rowsTemplate(this.gridString)
-          .width('90%')
-          .height(70)
-          .columnsGap(5)
-          .rowsGap(5)
+          .width('100%')
+          .listDirection(Axis.Horizontal)
         }.width(this.model.getMediaIconWidth())
       }
-      Grid() {
+      List() {
         ForEach(this.model.getActions(), (item) => {
-          GridItem() {
-            Button(item.buttonText, { type: item.buttonType, stateEffect: true })
+          ListItem() {
+            Button(item.buttonText, { type: item, stateEffect: true })
               .backgroundColor(item.buttonColor)
               .width(item.buttonWidth)
               .height(item.buttonHeight)
-              .margin({ left: 4, top: 8, bottom: 8 })
+              .margin({ top: 8, bottom: 8 })
               .borderRadius(8)
               .fontColor(item.buttonTextColor)
           }
         }, item => item.buttonId)
       }
-      .columnsTemplate('1fr 1fr 1fr')
-      .rowsTemplate(this.actionString)
-      .width('90%')
-      .height(70)
-      .columnsGap(5)
-      .rowsGap(5)
+      .listDirection(Axis.Horizontal)
+      .width('95%')
     }
     .borderWidth(this.model.getCardType()==CardType.Outlined?this.model.getCardBorderWidth():2)
     .borderRadius(this.model.getBorderRadius())

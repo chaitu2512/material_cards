@@ -30,35 +30,35 @@ class Properties {
     return this.cardType
   }
   setCardBorderColor(cardBorderColor : string | Resource | Color) {
-    this.cardBorderColor = cardBorderColor
+    this.cardBorderColor = cardBorderColor != null ? cardBorderColor : Color.Blue
     return this
   }
   getCardBorderColor() : string | Resource | Color{
     return this.cardBorderColor
   }
   setBorderRadius(borderRadius : number){
-    this.borderRadius = borderRadius
+    this.borderRadius = borderRadius != null ? borderRadius : 20
     return this
   }
   getBorderRadius() : number {
     return this.borderRadius
   }
   setCardBackGroundColor(cardBackgroundColor : string | Resource | Color) {
-    this.cardBackgroundColor = cardBackgroundColor
+    this.cardBackgroundColor = cardBackgroundColor != null ? cardBackgroundColor : Color.White
     return this
   }
   getCardBackgroundColor(): string | Resource | Color{
     return this.cardBackgroundColor
   }
   setShadowColor(shadowColor : string | Resource | Color){
-    this.shadowColor = shadowColor
+    this.shadowColor = shadowColor != null ? shadowColor : Color.Grey
     return this
   }
   getShadowColor(){
     return this.shadowColor
   }
   setShadowRadius(shadowRadius : number){
-    this.shadowRadius =shadowRadius
+    this.shadowRadius =shadowRadius != null ? shadowRadius : 25
     return this
   }
   getShadowRadius() : number{
@@ -102,77 +102,77 @@ export class CardModel extends Properties {
     return this.subTitle
   }
   setCardHeight(cardHeight : number){
-    this.cardHeight = cardHeight
+    this.cardHeight = cardHeight != null ? cardHeight : 540
     return this
   }
   getCardHeight() : number{
     return this.cardHeight
   }
   setCardWidth(cardWidth : number){
-    this.cardWidth = cardWidth
+    this.cardWidth = cardWidth != null ? cardWidth : 300
     return this
   }
   getCardWidth() : number{
     return this.cardWidth
   }
   setLeadingIcon(leadingIcon : string | Resource ) : CardModel{
-    this.leadingIcon = leadingIcon
+    this.leadingIcon = leadingIcon != null ? leadingIcon : undefined
     return this
   }
   getLeadingIcon() : string | Resource {
     return this.leadingIcon
   }
   setLeadingIconWidth(leadingIconWidth : number) : CardModel{
-    this.leadingIconWidth = leadingIconWidth
+    this.leadingIconWidth = leadingIconWidth !=null ? leadingIconWidth : 64
     return this
   }
   getLeadingIconWidth() : number{
     return this.leadingIconWidth
   }
   setLeadingIconHeight(leadingIconHeight : number) : CardModel{
-    this.leadingIconHeight = leadingIconHeight
+    this.leadingIconHeight = leadingIconHeight != null ? leadingIconHeight : 64
     return this
   }
   getLeadingIconHeight() : number{
     return this.leadingIconHeight
   }
   setMediaIcon(mediaIcon : string | Resource) : CardModel{
-    this.mediaIcon = mediaIcon
+    this.mediaIcon = mediaIcon == null ? undefined : mediaIcon
     return this
   }
   getMediaIcon() : string | Resource{
     return this.mediaIcon
   }
   setMediaIconWidth(mediaIconWidth : number) : CardModel{
-    this.mediaIconWidth = mediaIconWidth
+    this.mediaIconWidth = mediaIconWidth !=null ? mediaIconWidth : this.cardWidth
     return this
   }
   getMediaIconWidth() : number{
     return this.mediaIconWidth
   }
   setMediaIconHeight(mediaIconHeight : number) : CardModel{
-    this.mediaIconHeight = mediaIconHeight
+    this.mediaIconHeight = mediaIconHeight != null ? mediaIconHeight : 120
     return this
   }
   getMediaIconHeight() : number{
     return this.mediaIconHeight
   }
   setSupportingText(supportingText : string | Resource) : CardModel{
-    this.supportingText = supportingText
+    this.supportingText = supportingText ! = null ? supportingText : ""
     return this
   }
   getSupportingText() : string | Resource{
     return this.supportingText
   }
   setShowDivider(showDivider : boolean): CardModel{
-    this.showDivider = showDivider
+    this.showDivider = showDivider != null ?? showDivider ; false
     return this
   }
   getShowDivider(): boolean{
     return this.showDivider
   }
   setButtonHeader(buttonHeader : string | Resource) : CardModel{
-    this.buttonHeader = buttonHeader
+    this.buttonHeader = buttonHeader != null ? buttonHeader : ""
     return this
   }
   getButtonHeader() : string | Resource{
