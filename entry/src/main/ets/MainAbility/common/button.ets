@@ -65,14 +65,14 @@ export namespace button {
       return this.fontSize
     }
     setButtonHeight(buttonHeight : number){
-      this.buttonHeight = (buttonHeight == null || buttonHeight >35) ? 35 : this.buttonHeight
+      this.buttonHeight = (buttonHeight == null) ? 35 : this.buttonHeight
       return this
     }
     getButtonHeight() : number {
       return this.buttonHeight
     }
     setButtonWidth(buttonWidth : number){
-      this.buttonWidth = (buttonWidth == null || buttonWidth >80) ? 80 : this.buttonWidth
+      this.buttonWidth = (buttonWidth == null) ? 90 : this.buttonWidth
       return this
     }
     getButtonWidth() : number {

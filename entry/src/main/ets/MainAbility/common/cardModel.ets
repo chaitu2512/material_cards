@@ -6,6 +6,11 @@ export enum CardType {
   Elevated
 }
 
+export enum MediaIconPosition{
+  Middle,
+  Top,
+  Right
+}
 class Properties {
   private cardType: CardType = CardType.Normal
   private cardBorderWidth: number = 2
@@ -16,7 +21,7 @@ class Properties {
   private shadowRadius : number = 20
 
   setCardBorderWidth(cardBorderWidth : number) : Properties{
-    this.cardBorderWidth= cardBorderWidth
+    this.cardBorderWidth = cardBorderWidth
     return this
   }
   getCardBorderWidth() : number{
@@ -68,7 +73,14 @@ class Properties {
 
 export class CardModel extends Properties {
   private title: string | Resource = ""
+  private titleFontSize : number = 25
+  private titleFontColor : string | Resource | Color = Color.Black
+  private titleFontWeight : FontWeight = FontWeight.Bold
+
   private subTitle: string | Resource = ""
+  private subTitleFontSize : number = 15
+  private subTitleFontColor : string | Resource | Color = Color.Black
+  private subTitleFontWeight : FontWeight = FontWeight.Normal
 
   private cardHeight : number = 540
   private cardWidth : number = 300
@@ -77,6 +89,7 @@ export class CardModel extends Properties {
   private leadingIconWidth: number = 64
   private leadingIconHeight: number = 64
 
+  private mediaIconPosition : MediaIconPosition = MediaIconPosition.Middle
   private mediaIcon: string | Resource = undefined
   private mediaIconWidth: number = 300
   private mediaIconHeight: number = 144
@@ -98,8 +111,50 @@ export class CardModel extends Properties {
   getTitle() : string | Resource{
     return this.title
   }
+  setTitleFontSize(titleFontSize : number){
+    this.titleFontSize = titleFontSize
+    return this
+  }
+  getTitleFontSize() : number{
+    return this.titleFontSize
+  }
+  setTitleFontColor(titleFontColor : string | Resource | Color){
+    this.titleFontColor = titleFontColor
+    return this
+  }
+  getTitleFontColor() : string | Resource | Color{
+    return this.titleFontColor
+  }
+  setTitleFontWeight(titleFontWeight: FontWeight){
+    this.titleFontWeight = titleFontWeight
+    return this
+  }
+  getTitleFontWeight() : FontWeight {
+    return this.titleFontWeight
+  }
   getSubTitle() : string | Resource{
     return this.subTitle
+  }
+  setSubTitleFontSize(subTitleFontSize : number){
+    this.subTitleFontSize = subTitleFontSize
+    return this
+  }
+  getSubTitleFontSize() : number{
+    return this.subTitleFontSize
+  }
+  setSubTitleFontColor(subTitleFontColor : string | Resource | Color){
+    this.subTitleFontColor = subTitleFontColor
+    return this
+  }
+  getSubTitleFontColor() : string | Resource | Color{
+    return this.subTitleFontColor
+  }
+  setSubTitleFontWeight(subTitleFontWeight: FontWeight){
+    this.subTitleFontWeight = subTitleFontWeight
+    return this
+  }
+  getSubTitleFontWeight() : FontWeight {
+    return this.subTitleFontWeight
   }
   setCardHeight(cardHeight : number){
     this.cardHeight = cardHeight != null ? cardHeight : 540
@@ -137,8 +192,14 @@ export class CardModel extends Properties {
     return this.leadingIconHeight
   }
   setMediaIcon(mediaIcon : string | Resource) : CardModel{
-    this.mediaIcon = mediaIcon == null ? undefined : mediaIcon
+    this.mediaIcon = (mediaIcon == null ? undefined : mediaIcon)
     return this
+  }
+  setMediaIconPosition(mediaIconPosition : MediaIconPosition){
+    this.mediaIconPosition = mediaIconPosition != null ? mediaIconPosition : MediaIconPosition.Middle
+  }
+  getMediaIconPosition() : MediaIconPosition{
+    return this.mediaIconPosition
   }
   getMediaIcon() : string | Resource{
     return this.mediaIcon
@@ -158,7 +219,7 @@ export class CardModel extends Properties {
     return this.mediaIconHeight
   }
   setSupportingText(supportingText : string | Resource) : CardModel{
-    this.supportingText = supportingText ! = null ? supportingText : ""
+    this.supportingText = supportingText
     return this
   }
   getSupportingText() : string | Resource{
