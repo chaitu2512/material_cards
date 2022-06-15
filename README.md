@@ -143,5 +143,34 @@ build(){
 
 #Filled Right size Card
 
+```c
+  private filledCard : CardModel = new CardModel('Movie Name','SubHead')
 
+aboutToAppear() {
+    this.filledCard.setMediaIconPosition(MediaIconPosition.Right)
+    this.filledCard.setCardHeight(180)
+    this.filledCard.setCardWidth(300)
+    this.filledCard.setMediaIconWidth(90)
+    this.filledCard.setMediaIconHeight(90)
+    this.filledCard.setMediaIcon($r('app.media.disneylogo'))
+    this.filledCard.setSubTitleFontSize(20)
+    this.filledCard.setSubTitleFontWeight(FontWeight.Medium)
+    this.filledCard.setActions([new button.Model('Get Started', false, Color.Black, Color.White, 15, ButtonType.Capsule,30, 110),
+    new button.Model('Song Details', true, Color.Black, Color.Green, 15, ButtonType.Capsule, 30, 110)])
+    this.filledCard.setBorderRadius(8)
+    this.filledCard.setTitleFontColor(Color.White)
+    this.filledCard.setSubTitleFontColor(Color.White)
+    this.filledCard.setCardBackGroundColor('#ffea11bb')
+}
+
+build(){
+    Column(){
+        MaterialCard({
+            model = this.filledCard
+        })  
+    }.width('100%')
+}
+```
+
+![filledCard](screenshots/filledCardRight.png)
 
