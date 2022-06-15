@@ -113,3 +113,23 @@ build() {
 }
 ```
 ![Elevated_Card](screenshots/ElevatedRightImage.png)
+
+#Few More Examples
+
+Outlined Card
+```c
+  private album : CardModel = new CardModel('Breaking Podcast', 'Size of Song')
+  aboutToAppear(){
+    this.album.setMediaIconPosition(MediaIconPosition.Top)
+    this.album.setCardType(CardType.Outlined)
+    this.album.setCardHeight(250)
+    this.album.setCardWidth(200)
+    this.album.setMediaIconWidth(200)
+    this.album.setMediaIconHeight(180)
+    this.album.setMediaIcon($r('app.media.music'))
+    this.album.setMediaIconHeight(140)
+    this.album.setTitleFontSize(22)
+    this.album.setCardBackGroundColor(Color.Yellow)}
+}
+```
+![Out_Lined](screenshots/OutIinedCard.png )

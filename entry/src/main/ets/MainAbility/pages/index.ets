@@ -6,7 +6,7 @@ import {button,CardModel,CardType,MediaIconPosition,MaterialCard} from '@ohos/ma
 struct Index {
   private model: CardModel =new CardModel('Title' , 'SubTitle')
   private subHead : CardModel = new CardModel('Title', 'Subtitle goes here')
-  private album : CardModel = new CardModel('Breaking Podcast', 'Subtitle')
+  private album : CardModel = new CardModel('Breaking Podcast', 'Size of Song')
   private rightImage : CardModel = new CardModel('Play Relaxing Songs', 'Song Name')
   scroller: Scroller = new Scroller()
   aboutToAppear(){
@@ -47,7 +47,7 @@ struct Index {
     this.subHead.setLeadingIconWidth(64)
     //Outlined Card
     this.album.setMediaIconPosition(MediaIconPosition.Top)
-    this.album.setCardType(CardType.Elevated)
+    this.album.setCardType(CardType.Outlined)
     this.album.setCardHeight(250)
     this.album.setCardWidth(200)
     this.album.setMediaIconWidth(200)
@@ -85,14 +85,14 @@ struct Index {
 //        MaterialCard({
 //          model : this.subHead
 //        })
-//        Blank(40)
-//        MaterialCard({
-//          model : this.album
-//        })
         Blank(40)
         MaterialCard({
-          model : this.rightImage
+          model : this.album
         })
+//        Blank(40)
+//        MaterialCard({
+//          model : this.rightImage
+//        })
 //        Blank(40)
     }.width('100%')
     }
