@@ -87,21 +87,29 @@ this.model.setMediaIconPosition(MediaIconPosition.Top)
 ```
 ##Elevated Card 
 ```c
-private rightImage : CardModel = new CardModel('Play Relaxing Songs', 'Song Name')
+private rightImageModel : CardModel = new CardModel('Play Relaxing Songs', 'Song Name')
 
 aboutToAppear() {
-    this.rightImage.setMediaIconPosition(MediaIconPosition.Right)
-    this.rightImage.setCardType(CardType.Elevated)
-    this.rightImage.setCardHeight(180)
-    this.rightImage.setCardWidth(300)
-    this.rightImage.setMediaIconWidth(90)
-    this.rightImage.setMediaIconHeight(90)
-    this.rightImage.setMediaIcon($r('app.media.music'))
-    this.rightImage.setShadowColor(Color.Black)
-    this.rightImage.setShadowRadius(35)
-    this.rightImage.setSubTitleFontSize(20)
-    this.rightImage.setSubTitleFontWeight(FontWeight.Medium)
-    this.rightImage.setActions([new button.Model('Get Started', false, Color.White, Color.Black, 15, ButtonType.Capsule,30, 110),
-                                new button.Model('Song Details', false, Color.Black, Color.Green, 15, ButtonType.Capsule, 30, 110)])
+    this.rightImageModel.setMediaIconPosition(MediaIconPosition.Right)
+    this.rightImageModel.setCardType(CardType.Elevated)
+    this.rightImageModel.setCardHeight(180)
+    this.rightImageModel.setCardWidth(300)
+    this.rightImageModel.setMediaIconWidth(90)
+    this.rightImageModel.setMediaIconHeight(90)
+    this.rightImageModel.setMediaIcon($r('app.media.music'))
+    this.rightImageModel.setShadowColor(Color.Black)
+    this.rightImageModel.setShadowRadius(35)
+    this.rightImageModel.setSubTitleFontSize(20)
+    this.rightImageModel.setSubTitleFontWeight(FontWeight.Medium)
+    this.rightImageModel.setActions([new button.Model('Get Started', false, Color.White, Color.Black, 15, ButtonType.Capsule,30, 110),
+                                        new button.Model('Song Details', true, Color.Black, Color.Green, 15, ButtonType.Capsule, 30, 110)])
+}
+build() {
+    Column() {
+        MaterialCard({
+            model : this.rightImageModel
+        })
+    }.width('100%')
 }
 ```
+![Elevated_Card](screenshots/ElevatedRightImage.png)

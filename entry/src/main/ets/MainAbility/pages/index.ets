@@ -69,7 +69,7 @@ struct Index {
     this.rightImage.setSubTitleFontSize(20)
     this.rightImage.setSubTitleFontWeight(FontWeight.Medium)
     this.rightImage.setActions([new button.Model('Get Started',false,Color.White, Color.Black,15,ButtonType.Capsule,30,110),
-                                new button.Model('Song Details',false,Color.Black, Color.Green,15,ButtonType.Capsule,30,110)])
+                                new button.Model('Song Details',true,Color.Black, Color.Green,15,ButtonType.Capsule,30,110)])
 
     //filled Card
   }
@@ -77,11 +77,11 @@ struct Index {
   build() {
     Scroll(this.scroller) {
       Column() {
-        Blank(40)
-        MaterialCard({
-          model : this.model
-        })
-        Blank(40)
+//        Blank(40)
+//        MaterialCard({
+//          model : this.model
+//        })
+//        Blank(40)
 //        MaterialCard({
 //          model : this.subHead
 //        })
@@ -89,10 +89,10 @@ struct Index {
 //        MaterialCard({
 //          model : this.album
 //        })
-//        Blank(40)
-//        MaterialCard({
-//          model : this.rightImage
-//        })
+        Blank(40)
+        MaterialCard({
+          model : this.rightImage
+        })
 //        Blank(40)
     }.width('100%')
     }
