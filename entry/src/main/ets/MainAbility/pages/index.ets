@@ -4,7 +4,7 @@ import {button,CardModel,CardType,MediaIconPosition,MaterialCard} from '@ohos/ma
 @Entry
 @Component
 struct Index {
-  private model: CardModel =new CardModel('Brave' , 'Disney Film')
+  private model: CardModel =new CardModel('Title' , 'SubTitle')
   private subHead : CardModel = new CardModel('Title', 'Subtitle goes here')
   private album : CardModel = new CardModel('Breaking Podcast', 'Subtitle')
   private rightImage : CardModel = new CardModel('Play Relaxing Songs', 'Song Name')
@@ -33,7 +33,9 @@ struct Index {
     this.model.setShadowRadius(40)
     this.model.setBorderRadius(3)
     this.model.setMediaIconPosition(MediaIconPosition.Top)
-
+    this.model.setSubTitleFontSize(20)
+    this.model.setTitleFontSize(25)
+    this.model.setTitleFontWeight(FontWeight.Bolder)
     //Subhead
     this.subHead.setCardType(CardType.Outlined)
     this.subHead.setCardBorderWidth(3)

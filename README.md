@@ -51,6 +51,9 @@ aboutToAppear(){
     this.model.setShadowRadius(40)
     this.model.setBorderRadius(3)
     this.model.setMediaIconPosition(MediaIconPosition.Top)
+    this.model.setSubTitleFontSize(20)
+    this.model.setTitleFontSize(25)
+    this.model.setTitleFontWeight(FontWeight.Bolder)
     this.model.setButtons([new button.Model('Button1',false, '#ff242222', '#ffecc2ff', 15, ButtonType.Normal, 35, 100),
                             new button.Model('Button2',false, '#ff242222', '#ffecc2ff', 15, ButtonType.Capsule, 35, 100),
                             new button.Model('Button3',false, '#ff242222', '#ffecc2ff', 15, ButtonType.Capsule, 35, 100),
@@ -70,7 +73,7 @@ build() {
     }.width('100%')
 }
 ```
-![Filled_Card](screenshots/filledCard.png)
+![filled_card](screenshots/filledCard.png)
 
 Button can be added to the Card in the form an array . Pass the buttons in the form of an array. 
 
