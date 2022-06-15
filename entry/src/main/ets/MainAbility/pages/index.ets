@@ -4,31 +4,34 @@ import {button,CardModel,CardType,MediaIconPosition,MaterialCard} from '@ohos/ma
 @Entry
 @Component
 struct Index {
-  private model: CardModel =new CardModel('Title' , 'SubTitle')
+  private model: CardModel =new CardModel('Brave' , 'Disney Film')
   private subHead : CardModel = new CardModel('Title', 'Subtitle goes here')
   private album : CardModel = new CardModel('Breaking Podcast', 'Subtitle')
   private rightImage : CardModel = new CardModel('Play Relaxing Songs', 'Song Name')
   scroller: Scroller = new Scroller()
   aboutToAppear(){
-    this.model.setButtons([new button.Model(false,'Item1','#ff7e3636', '#ff42d4aa',15,ButtonType.Normal,30,90),
-                            new button.Model(false,'Item2','#ff7e3636', '#ff42d4aa',15,ButtonType.Capsule,30,90),
-                            new button.Model(false,'Item3','#ff7e3636', '#ff42d4aa',15,ButtonType.Capsule,30,90),
-                            new button.Model(false,'Item5','#ff7e3636', '#ff42d4aa',15,ButtonType.Capsule,30,90),
-                            new button.Model(false,'Item4','#ff7e3636', '#ff42d4aa',15,ButtonType.Capsule,30,90)])
-    this.model.setActions([new button.Model(false,'Action1','#ff7e3636', '#fff3bb45',15,ButtonType.Capsule,30,90),
-                            new button.Model(false,'Action2','#ff7e3636', '#fff3bb45',15,ButtonType.Capsule,30,90),
-                            new button.Model(false,'Action3','#ff7e3636', '#fff3bb45',15,ButtonType.Capsule,30,90),
-                            new button.Model(false,'Action4','#ff7e3636', '#fff3bb45',15,ButtonType.Capsule,30,90),
-                            new button.Model(false,'Action5','#ff7e3636', '#fff3bb45',15,ButtonType.Capsule,30,90),])
-    this.model.setCardType(CardType.Elevated)
+    this.model.setButtons([new button.Model('Button1',false, '#ff242222', '#ffecc2ff', 15, ButtonType.Normal, 35, 100),
+                            new button.Model('Button2',false, '#ff242222', '#ffecc2ff', 15, ButtonType.Capsule, 35, 100),
+                            new button.Model('Button3',false, '#ff242222', '#ffecc2ff', 15, ButtonType.Capsule, 35, 100),
+                            new button.Model('Button4',false, '#ff242222', '#ffecc2ff', 15, ButtonType.Capsule, 35, 100),
+                             new button.Model('Button5',false, '#ff242222', '#ffecc2ff', 15, ButtonType.Capsule, 35, 100)])
+    this.model.setActions([new button.Model('Action1',false, '#ff7e3636', '#fff3bb45', 15, ButtonType.Capsule, 30, 90),
+                           new button.Model('Action2',false, '#ff7e3636', '#fff3bb45', 15, ButtonType.Capsule, 30, 90),
+                           new button.Model('Action3',false, '#ff7e3636', '#fff3bb45', 15, ButtonType.Capsule, 30, 90),
+                           new button.Model('Action4',false, '#ff7e3636', '#fff3bb45', 15, ButtonType.Capsule, 30, 90),
+                            new button.Model('Action5',false, '#ff7e3636', '#fff3bb45', 15, ButtonType.Capsule, 30, 90),])
+    this.model.setCardBackGroundColor('#ffffdef0')
+    this.model.setCardType(CardType.Normal)
     this.model.setLeadingIcon($r('app.media.disneylogo'))
     this.model.setMediaIcon($r('app.media.brave'))
     this.model.setCardHeight(520)
     this.model.setShowDivider(true)
-    this.model.setButtonHeader('Buttons')
-    this.model.setSupportingText("Determined to make her own path in life, Princess Merida defies a custom that brings chaos to her kingdom. Granted one wish, Merida ")
-    this.model.setShadowColor('#ffff009d')
+    this.model.setButtonHeader('buttons')
+    this.model.setSupportingText("Determined to make her own path in life, Princess Merida defies " +
+                                  "a custom that brings chaos to her kingdom. Granted one wish, Merida ")
+    this.model.setShadowColor('#d0fa7fff')
     this.model.setShadowRadius(40)
+    this.model.setBorderRadius(3)
     this.model.setMediaIconPosition(MediaIconPosition.Top)
 
     //Subhead
@@ -63,8 +66,8 @@ struct Index {
     this.rightImage.setShadowRadius(35)
     this.rightImage.setSubTitleFontSize(20)
     this.rightImage.setSubTitleFontWeight(FontWeight.Medium)
-    this.rightImage.setActions([new button.Model(false,'Get Started',Color.White, Color.Black,15,ButtonType.Capsule,30,110),
-                                new button.Model(true,'Song Details',Color.Black, Color.Green,15,ButtonType.Capsule,30,110)])
+    this.rightImage.setActions([new button.Model('Get Started',false,Color.White, Color.Black,15,ButtonType.Capsule,30,110),
+                                new button.Model('Song Details',false,Color.Black, Color.Green,15,ButtonType.Capsule,30,110)])
 
     //filled Card
   }
@@ -72,22 +75,23 @@ struct Index {
   build() {
     Scroll(this.scroller) {
       Column() {
+        Blank(40)
         MaterialCard({
           model : this.model
         })
         Blank(40)
-        MaterialCard({
-          model : this.subHead
-        })
-        Blank(40)
-        MaterialCard({
-          model : this.album
-        })
-        Blank(40)
-        MaterialCard({
-          model : this.rightImage
-        })
-        Blank(40)
+//        MaterialCard({
+//          model : this.subHead
+//        })
+//        Blank(40)
+//        MaterialCard({
+//          model : this.album
+//        })
+//        Blank(40)
+//        MaterialCard({
+//          model : this.rightImage
+//        })
+//        Blank(40)
     }.width('100%')
     }
     .scrollable(ScrollDirection.Vertical).scrollBar(BarState.On)

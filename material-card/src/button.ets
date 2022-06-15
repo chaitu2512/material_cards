@@ -1,6 +1,6 @@
 export namespace button {
   export class Model {
-    private isText : boolean
+    private isText : boolean =false
     private buttonId : number = 0
     private buttonColor : string | Resource | Color = Color.Blue
     private buttonText  : string = undefined
@@ -9,8 +9,9 @@ export namespace button {
     private buttonHeight : number = 90
     private buttonWidth : number = 30
     private fontSize : number = 15
-    constructor(isText : boolean ,
+    constructor(
                 buttonText : string ,
+                isText : boolean  = false ,
                 buttonTextColor : string | Resource | Color = Color.White ,
                 buttonColor : string | Resource | Color = Color.Blue,
                 fontSize : number =15 ,

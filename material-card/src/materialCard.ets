@@ -120,7 +120,7 @@ export struct MaterialCard {
       .width('95%')
       .height(50)
     }
-    .borderWidth((this.model.getCardType()==CardType.Outlined)?this.model.getCardBorderWidth():0)
+    .borderWidth((this.model.getCardType()==CardType.Outlined)?this.model.getCardBorderWidth():0.5)
     .borderRadius(this.model.getBorderRadius())
     .margin({ top: 16 })
     .height(this.model.getCardHeight())
