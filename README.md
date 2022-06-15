@@ -33,8 +33,8 @@ MaterialCard({
 ```
 Note : To change the Type of the Card, change cardType. Default is set as 'Normal' i.e., Filled Card.
 ![Sub_Head](screenshots/subHead.png)
-
-4. Code for Complete Filled Card. Set/Change the card default Parameters based on the requirement. 
+##Filled Card
+Code for Complete Filled Card. Set/Change the card default Parameters based on the requirement. 
 ```c
 private model: CardModel =new CardModel('Title' , 'subTitle')
 aboutToAppear(){
@@ -75,15 +75,33 @@ build() {
 ```
 ![filled_card](screenshots/filledCard.png)
 
-Button can be added to the Card in the form an array . Pass the buttons in the form of an array. 
+Button can be added to the Card in the form an array. Passing Parameter layout is given below:
 
-Passing only the ButtonText is compulsary. 
-
-Passing Parameter layout is given below
+Note : 'isText'  is a boolean, if set 'true' the, button is in the form of only Text. 'false' will set it as 
 ```c
     button1 : button.Model = new this.button.Model(buttonText,isText,fontColor,buttonColor,fontSize,ButtonType,buttonHeight,buttonWidth)
 ```
 Note: To change the position of the  Media Icon Image, change MediaIconPosition. Default is set as 'Middle'. 
 ```c
 this.model.setMediaIconPosition(MediaIconPosition.Top) 
+```
+##Elevated Card 
+```c
+private rightImage : CardModel = new CardModel('Play Relaxing Songs', 'Song Name')
+
+aboutToAppear() {
+    this.rightImage.setMediaIconPosition(MediaIconPosition.Right)
+    this.rightImage.setCardType(CardType.Elevated)
+    this.rightImage.setCardHeight(180)
+    this.rightImage.setCardWidth(300)
+    this.rightImage.setMediaIconWidth(90)
+    this.rightImage.setMediaIconHeight(90)
+    this.rightImage.setMediaIcon($r('app.media.music'))
+    this.rightImage.setShadowColor(Color.Black)
+    this.rightImage.setShadowRadius(35)
+    this.rightImage.setSubTitleFontSize(20)
+    this.rightImage.setSubTitleFontWeight(FontWeight.Medium)
+    this.rightImage.setActions([new button.Model('Get Started', false, Color.White, Color.Black, 15, ButtonType.Capsule,30, 110),
+                                new button.Model('Song Details', false, Color.Black, Color.Green, 15, ButtonType.Capsule, 30, 110)])
+}
 ```
