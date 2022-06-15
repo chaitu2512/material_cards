@@ -8,6 +8,7 @@ struct Index {
   private subHead : CardModel = new CardModel('Title', 'Subtitle goes here')
   private album : CardModel = new CardModel('Breaking Podcast', 'Size of Song')
   private rightImage : CardModel = new CardModel('Play Relaxing Songs', 'Song Name')
+  private filledCard : CardModel = new CardModel('Movie Name','SubHead')
   scroller: Scroller = new Scroller()
   aboutToAppear(){
     this.model.setButtons([new button.Model('Button1',false, '#ff242222', '#ffecc2ff', 15, ButtonType.Normal, 35, 100),
@@ -70,8 +71,23 @@ struct Index {
     this.rightImage.setSubTitleFontWeight(FontWeight.Medium)
     this.rightImage.setActions([new button.Model('Get Started',false,Color.White, Color.Black,15,ButtonType.Capsule,30,110),
                                 new button.Model('Song Details',true,Color.Black, Color.Green,15,ButtonType.Capsule,30,110)])
+    this.rightImage.setBorderRadius(4)
 
-    //filled Card
+    //elevated Card
+    this.filledCard.setMediaIconPosition(MediaIconPosition.Right)
+    this.filledCard.setCardHeight(180)
+    this.filledCard.setCardWidth(300)
+    this.filledCard.setMediaIconWidth(90)
+    this.filledCard.setMediaIconHeight(90)
+    this.filledCard.setMediaIcon($r('app.media.disneylogo'))
+    this.filledCard.setSubTitleFontSize(20)
+    this.filledCard.setSubTitleFontWeight(FontWeight.Medium)
+    this.filledCard.setActions([new button.Model('Get Started',false,Color.Black, Color.White,15,ButtonType.Capsule,30,110),
+                                  new button.Model('Song Details',true,Color.Black, Color.Green,15,ButtonType.Capsule,30,110)])
+    this.filledCard.setBorderRadius(8)
+    this.filledCard.setTitleFontColor(Color.White)
+    this.filledCard.setSubTitleFontColor(Color.White)
+    this.filledCard.setCardBackGroundColor('#ffea11bb')
   }
 
   build() {
@@ -85,15 +101,19 @@ struct Index {
 //        MaterialCard({
 //          model : this.subHead
 //        })
-        Blank(40)
-        MaterialCard({
-          model : this.album
-        })
+//        Blank(40)
+//        MaterialCard({
+//          model : this.album
+//        })
 //        Blank(40)
 //        MaterialCard({
 //          model : this.rightImage
 //        })
-//        Blank(40)
+        Blank(40)
+        MaterialCard({
+          model : this.filledCard
+        })
+        Blank(40)
     }.width('100%')
     }
     .scrollable(ScrollDirection.Vertical).scrollBar(BarState.On)

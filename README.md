@@ -130,6 +130,18 @@ Outlined Card
     this.album.setMediaIconHeight(140)
     this.album.setTitleFontSize(22)
     this.album.setCardBackGroundColor(Color.Yellow)}
+}   
+build(){
+    Column(){
+        MaterialCard({
+        model : this.rightImage
+        })
+}
 }
 ```
 ![Out_Lined](screenshots/OutIinedCard.png )
+
+#Filled Right size Card
+
+
+
