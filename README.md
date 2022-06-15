@@ -52,5 +52,5 @@ private model: CardModel =new CardModel('Title' , 'subTitle')
     this.model.setBorderRadius(3)
     this.model.setMediaIconPosition(MediaIconPosition.Top) 
 ```
-Note: 1)To change the position of the  Media Icon Image, change MediaIconPosition. Default is set as 'Middle'.
+Note: 1)To change the position of the  Media Icon Image, change MediaIconPosition. Default is set as 'Middle'. 
       2)To change the Type of the Card, change cardType. Default is set as 'Normal' i.e., Filled Card.
