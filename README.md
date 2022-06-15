@@ -71,6 +71,7 @@ build() {
 }
 ```
 ![Filled_Card](screenshots/filledCard.png)
+
 Button can be added to the Card in the form an array . Pass the buttons in the form of an array. 
 
 Passing only the ButtonText is compulsary. 
