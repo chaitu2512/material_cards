@@ -1,6 +1,6 @@
-import {button} from '../common/button'
-import {CardModel,CardType,MediaIconPosition} from '../common/cardModel'
-import {MaterialCard} from '../common/materialCard'
+
+import {button,CardModel,CardType,MediaIconPosition,MaterialCard} from '@ohos/material-card'
+
 @Entry
 @Component
 struct Index {
