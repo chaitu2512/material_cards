@@ -1,6 +1,6 @@
 # Material_Cards
 
-Material Card Design in OpenHarmony.
+Material Card Design.
 
 ## Usage Instructions
 

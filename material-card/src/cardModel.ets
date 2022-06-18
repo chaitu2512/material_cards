@@ -6,90 +6,104 @@ export enum CardType {
   Elevated
 }
 
-export enum MediaIconPosition{
+export enum MediaIconPosition {
   Middle,
   Top,
   Right
 }
+
 class Properties {
   private cardType: CardType = CardType.Normal
   private cardBorderWidth: number = 2
   private cardBorderColor: string | Color | ResourceColor = Color.Blue
-  private borderRadius : number = 20
+  private borderRadius: number = 20
   private cardBackgroundColor: string | Color | ResourceColor = Color.White
   private shadowColor: string | Color | ResourceColor = Color.Grey
-  private shadowRadius : number = 20
+  private shadowRadius: number = 20
 
-  setCardBorderWidth(cardBorderWidth : number) : Properties{
+  setCardBorderWidth(cardBorderWidth: number): Properties{
     this.cardBorderWidth = cardBorderWidth
     return this
   }
-  getCardBorderWidth() : number{
+
+  getCardBorderWidth(): number{
     return this.cardBorderWidth
   }
-  setCardType(cardType : CardType){
-    this.cardType =cardType
+
+  setCardType(cardType: CardType) {
+    this.cardType = cardType
     return this
   }
-  getCardType() : CardType{
+
+  getCardType(): CardType{
     return this.cardType
   }
-  setCardBorderColor(cardBorderColor : string | Resource | Color) {
+
+  setCardBorderColor(cardBorderColor: string | Resource | Color) {
     this.cardBorderColor = cardBorderColor != null ? cardBorderColor : Color.Blue
     return this
   }
-  getCardBorderColor() : string | Resource | Color{
+
+  getCardBorderColor(): string | Resource | Color{
     return this.cardBorderColor
   }
-  setBorderRadius(borderRadius : number){
+
+  setBorderRadius(borderRadius: number) {
     this.borderRadius = borderRadius != null ? borderRadius : 20
     return this
   }
-  getBorderRadius() : number {
+
+  getBorderRadius(): number {
     return this.borderRadius
   }
-  setCardBackGroundColor(cardBackgroundColor : string | Resource | Color) {
+
+  setCardBackGroundColor(cardBackgroundColor: string | Resource | Color) {
     this.cardBackgroundColor = cardBackgroundColor != null ? cardBackgroundColor : Color.White
     return this
   }
+
   getCardBackgroundColor(): string | Resource | Color{
     return this.cardBackgroundColor
   }
-  setShadowColor(shadowColor : string | Resource | Color){
+
+  setShadowColor(shadowColor: string | Resource | Color) {
     this.shadowColor = shadowColor != null ? shadowColor : Color.Grey
     return this
   }
-  getShadowColor(){
+
+  getShadowColor() {
     return this.shadowColor
   }
-  setShadowRadius(shadowRadius : number){
-    this.shadowRadius =shadowRadius != null ? shadowRadius : 25
+
+  setShadowRadius(shadowRadius: number) {
+    this.shadowRadius = shadowRadius != null ? shadowRadius : 25
     return this
   }
-  getShadowRadius() : number{
+
+  getShadowRadius(): number{
     return this.shadowRadius
   }
 }
 
 export class CardModel extends Properties {
   private title: string | Resource = ""
-  private titleFontSize : number = 25
-  private titleFontColor : string | Resource | Color = Color.Black
-  private titleFontWeight : FontWeight = FontWeight.Bold
+  private titleFontSize: number = 25
+  private titleFontColor: string | Resource | Color = Color.Black
+  private titleFontWeight: FontWeight = FontWeight.Bold
 
   private subTitle: string | Resource = ""
-  private subTitleFontSize : number = 15
-  private subTitleFontColor : string | Resource | Color = Color.Black
-  private subTitleFontWeight : FontWeight = FontWeight.Normal
+  private subTitleFontSize: number = 15
+  private subTitleFontColor: string | Resource | Color = Color.Black
+  private subTitleFontWeight: FontWeight = FontWeight.Normal
 
-  private cardHeight : number = 540
-  private cardWidth : number = 300
+  private cardHeight: number = 540
+  private cardWidth: number = 300
 
   private leadingIcon: string | Resource = undefined
   private leadingIconWidth: number = 64
   private leadingIconHeight: number = 64
 
-  private mediaIconPosition : MediaIconPosition = MediaIconPosition.Middle
+  private mediaIconPosition: MediaIconPosition = MediaIconPosition.Middle
   private mediaIcon: string | Resource = undefined
   private mediaIconWidth: number = 300
   private mediaIconHeight: number = 144
@@ -103,154 +117,218 @@ export class CardModel extends Properties {
 
   private actions: button.Model [] = []
 
+  private buttonClick: (button: button.Model) => void = undefined
+  private actionClick: (action: button.Model) => void = undefined
+
+  setButtonClick(callBack: (button: button.Model) => void) {
+    this.buttonClick = callBack
+    return this
+  }
+
+  getButtonClick(): (button: button.Model) => void{
+    return this.buttonClick
+  }
+
+  setActionClick(callBack: (action: button.Model) => void) {
+    this.actionClick = callBack
+    return this
+  }
+
+  getActionClick(): (action: button.Model) => void{
+    return this.actionClick
+  }
+
   constructor(title: string | Resource, subTitle: string | Resource) {
     super()
     this.title = title
     this.subTitle = subTitle
   }
-  getTitle() : string | Resource{
+
+  getTitle(): string | Resource{
     return this.title
   }
-  setTitleFontSize(titleFontSize : number){
+
+  setTitleFontSize(titleFontSize: number) {
     this.titleFontSize = titleFontSize
     return this
   }
-  getTitleFontSize() : number{
+
+  getTitleFontSize(): number{
     return this.titleFontSize
   }
-  setTitleFontColor(titleFontColor : string | Resource | Color){
+
+  setTitleFontColor(titleFontColor: string | Resource | Color) {
     this.titleFontColor = titleFontColor
     return this
   }
-  getTitleFontColor() : string | Resource | Color{
+
+  getTitleFontColor(): string | Resource | Color{
     return this.titleFontColor
   }
-  setTitleFontWeight(titleFontWeight: FontWeight){
+
+  setTitleFontWeight(titleFontWeight: FontWeight) {
     this.titleFontWeight = titleFontWeight
     return this
   }
-  getTitleFontWeight() : FontWeight {
+
+  getTitleFontWeight(): FontWeight {
     return this.titleFontWeight
   }
-  getSubTitle() : string | Resource{
+
+  getSubTitle(): string | Resource{
     return this.subTitle
   }
-  setSubTitleFontSize(subTitleFontSize : number){
+
+  setSubTitleFontSize(subTitleFontSize: number) {
     this.subTitleFontSize = subTitleFontSize
     return this
   }
-  getSubTitleFontSize() : number{
+
+  getSubTitleFontSize(): number{
     return this.subTitleFontSize
   }
-  setSubTitleFontColor(subTitleFontColor : string | Resource | Color){
+
+  setSubTitleFontColor(subTitleFontColor: string | Resource | Color) {
     this.subTitleFontColor = subTitleFontColor
     return this
   }
-  getSubTitleFontColor() : string | Resource | Color{
+
+  getSubTitleFontColor(): string | Resource | Color{
     return this.subTitleFontColor
   }
-  setSubTitleFontWeight(subTitleFontWeight: FontWeight){
+
+  setSubTitleFontWeight(subTitleFontWeight: FontWeight) {
     this.subTitleFontWeight = subTitleFontWeight
     return this
   }
-  getSubTitleFontWeight() : FontWeight {
+
+  getSubTitleFontWeight(): FontWeight {
     return this.subTitleFontWeight
   }
-  setCardHeight(cardHeight : number){
+
+  setCardHeight(cardHeight: number) {
     this.cardHeight = cardHeight != null ? cardHeight : 540
     return this
   }
-  getCardHeight() : number{
+
+  getCardHeight(): number{
     return this.cardHeight
   }
-  setCardWidth(cardWidth : number){
+
+  setCardWidth(cardWidth: number) {
     this.cardWidth = cardWidth != null ? cardWidth : 300
     return this
   }
-  getCardWidth() : number{
+
+  getCardWidth(): number{
     return this.cardWidth
   }
-  setLeadingIcon(leadingIcon : string | Resource ) : CardModel{
+
+  setLeadingIcon(leadingIcon: string | Resource): CardModel{
     this.leadingIcon = leadingIcon != null ? leadingIcon : undefined
     return this
   }
-  getLeadingIcon() : string | Resource {
+
+  getLeadingIcon(): string | Resource {
     return this.leadingIcon
   }
-  setLeadingIconWidth(leadingIconWidth : number) : CardModel{
-    this.leadingIconWidth = leadingIconWidth !=null ? leadingIconWidth : 64
+
+  setLeadingIconWidth(leadingIconWidth: number): CardModel{
+    this.leadingIconWidth = leadingIconWidth != null ? leadingIconWidth : 64
     return this
   }
-  getLeadingIconWidth() : number{
+
+  getLeadingIconWidth(): number{
     return this.leadingIconWidth
   }
-  setLeadingIconHeight(leadingIconHeight : number) : CardModel{
+
+  setLeadingIconHeight(leadingIconHeight: number): CardModel{
     this.leadingIconHeight = leadingIconHeight != null ? leadingIconHeight : 64
     return this
   }
-  getLeadingIconHeight() : number{
+
+  getLeadingIconHeight(): number{
     return this.leadingIconHeight
   }
-  setMediaIcon(mediaIcon : string | Resource) : CardModel{
+
+  setMediaIcon(mediaIcon: string | Resource): CardModel{
     this.mediaIcon = (mediaIcon == null ? undefined : mediaIcon)
     return this
   }
-  setMediaIconPosition(mediaIconPosition : MediaIconPosition){
+
+  setMediaIconPosition(mediaIconPosition: MediaIconPosition) {
     this.mediaIconPosition = mediaIconPosition != null ? mediaIconPosition : MediaIconPosition.Middle
   }
-  getMediaIconPosition() : MediaIconPosition{
+
+  getMediaIconPosition(): MediaIconPosition{
     return this.mediaIconPosition
   }
-  getMediaIcon() : string | Resource{
+
+  getMediaIcon(): string | Resource{
     return this.mediaIcon
   }
-  setMediaIconWidth(mediaIconWidth : number) : CardModel{
-    this.mediaIconWidth = mediaIconWidth !=null ? mediaIconWidth : this.cardWidth
+
+  setMediaIconWidth(mediaIconWidth: number): CardModel{
+    this.mediaIconWidth = mediaIconWidth != null ? mediaIconWidth : this.cardWidth
     return this
   }
-  getMediaIconWidth() : number{
+
+  getMediaIconWidth(): number{
     return this.mediaIconWidth
   }
-  setMediaIconHeight(mediaIconHeight : number) : CardModel{
+
+  setMediaIconHeight(mediaIconHeight: number): CardModel{
     this.mediaIconHeight = mediaIconHeight != null ? mediaIconHeight : 120
     return this
   }
-  getMediaIconHeight() : number{
+
+  getMediaIconHeight(): number{
     return this.mediaIconHeight
   }
-  setSupportingText(supportingText : string | Resource) : CardModel{
+
+  setSupportingText(supportingText: string | Resource): CardModel{
     this.supportingText = supportingText
     return this
   }
-  getSupportingText() : string | Resource{
+
+  getSupportingText(): string | Resource{
     return this.supportingText
   }
-  setShowDivider(showDivider : boolean): CardModel{
-    this.showDivider = showDivider != null ?? showDivider ; false
+
+  setShowDivider(showDivider: boolean): CardModel{
+    this.showDivider = showDivider != null ?? showDivider;
+    false
     return this
   }
+
   getShowDivider(): boolean{
     return this.showDivider
   }
-  setButtonHeader(buttonHeader : string | Resource) : CardModel{
+
+  setButtonHeader(buttonHeader: string | Resource): CardModel{
     this.buttonHeader = buttonHeader != null ? buttonHeader : ""
     return this
   }
-  getButtonHeader() : string | Resource{
+
+  getButtonHeader(): string | Resource{
     return this.buttonHeader
   }
-  setButtons(buttons : button.Model[]) : CardModel{
+
+  setButtons(buttons: button.Model[]): CardModel{
     this.buttons = buttons
     return this
   }
-  getButtons() : button.Model[]{
+
+  getButtons(): button.Model[]{
     return this.buttons
   }
-  setActions(actions : button.Model[])  : CardModel{
+
+  setActions(actions: button.Model[]): CardModel{
     this.actions = actions
     return this
   }
-  getActions()  : button.Model[]{
+
+  getActions(): button.Model[]{
     return this.actions
   }
 }

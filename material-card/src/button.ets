@@ -27,6 +27,10 @@ export namespace button {
       this.buttonHeight = buttonHeight
       this.buttonWidth =buttonWidth
     }
+//    onClick(hi : string) {
+//      console.log(hi)
+//    }
+
     setIsText(isText : boolean){
       this.isText = isText
       return this
@@ -81,9 +85,11 @@ export namespace button {
     }
     setButtonType(buttonType : ButtonType){
       this.buttonType = (buttonType != null) ? buttonType : ButtonType.Capsule
+      return this
     }
     getButtonType() : ButtonType{
       return this.buttonType
     }
+
   }
 }
