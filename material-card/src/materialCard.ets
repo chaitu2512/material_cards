@@ -3,7 +3,7 @@ import { CardModel, CardType, MediaIconPosition } from './cardModel'
 @Component
 export struct MaterialCard {
   @State private model: CardModel = undefined
-  private cardClick: Function
+  private cardClick : () => void = undefined
 
   build() {
     Column() {
@@ -152,7 +152,10 @@ export struct MaterialCard {
     .shadow({ radius: this.model.getCardType() == CardType.Elevated ? this.model.getShadowRadius() : 0,
       color: this.model.getShadowColor() })
     .onClick((event: ClickEvent) => {
-
+      let cardClick = this.model.getCardClick()
+      if (cardClick != undefined && cardClick != null) {
+        cardClick()
+      }
     })
   }
 }

@@ -119,6 +119,15 @@ export class CardModel extends Properties {
 
   private buttonClick: (button: button.Model) => void = undefined
   private actionClick: (action: button.Model) => void = undefined
+  private cardClick : () => void = undefined
+
+  setCardClick(callBack: () => void) {
+    this.cardClick = callBack
+    return this
+  }
+  getCardClick(): () => void {
+    return this.cardClick
+  }
 
   setButtonClick(callBack: (button: button.Model) => void) {
     this.buttonClick = callBack

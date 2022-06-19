@@ -13,7 +13,9 @@ struct Index {
   private OnClick(button: button.Model) {
     console.log(button.getButtonText())
   }
-
+  private cardclick() {
+    console.log("card")
+  }
   private Elevated(model: CardModel) {
     model.setButtons([new button.Model('Button1', false, '#ffffffff', '#ff6e00a7', 15, ButtonType.Capsule, 35, 100),
     new button.Model('Button2', false, '#ffffffff', '#ff6e00a7', 15, ButtonType.Capsule, 35, 100),
@@ -43,6 +45,7 @@ struct Index {
     model.setLeadingIconWidth(70)
     model.setButtonClick(this.OnClick)
     model.setActionClick(this.OnClick)
+    model.setCardClick(this.cardclick)
   }
 
   private SubHead(model: CardModel) {
@@ -103,7 +106,7 @@ struct Index {
     model.setBorderRadius(8)
     model.setTitleFontColor(Color.White)
     model.setSubTitleFontColor(Color.White)
-    model.setCardBackGroundColor('#ffea11bb')
+    model.setCardBackGroundColor('#ffff1ccc')
     model.setButtonClick(this.OnClick)
     model.setActionClick(this.OnClick)
   }
