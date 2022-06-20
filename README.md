@@ -41,7 +41,7 @@ Note : To change the Type of the Card, change cardType. Default is set as 'Norma
 
 ![Sub_Head](screenshots/subHead.png)
 
-#Filled Card
+#Filled_Card
 
 Code for Complete Filled Card. Set/Change the card default Parameters based on the requirement. 
 
@@ -101,7 +101,7 @@ All the Variables can be reset to their default values by call reset function.
 ```ets
 this.model.reset()
 ```
-##Elevated Card 
+##Elevated_Card 
 ```c
 private rightImageModel : CardModel = new CardModel('Play Relaxing Songs', 'Song Name')
 
@@ -157,7 +157,7 @@ build(){
 ```
 ![Out_Lined](screenshots/OutIinedCard.png )
 
-#Filled Right size Card
+#Filled_Right_image_Card
 
 ```ets
   private filledCard : CardModel = new CardModel('Movie Name','SubHead')
