@@ -8,7 +8,7 @@ Three cards :
 2. Outlined Card
 3. Elevated Card
 
-## Instructions for use
+# Instructions for use
 
 
 1. You need to import the following:
@@ -101,7 +101,7 @@ All the Variables can be reset to their default values by call reset function.
 ```ets
 this.model.reset()
 ```
-##Elevated_Card 
+#Elevated_Card 
 ```c
 private rightImageModel : CardModel = new CardModel('Play Relaxing Songs', 'Song Name')
 
@@ -132,7 +132,7 @@ build() {
 
 #Few More Examples
 
-Outlined Card
+#Outlined_Card
 ```ets
   private album : CardModel = new CardModel('Breaking Podcast', 'Size of Song')
   aboutToAppear(){
