@@ -1,10 +1,17 @@
 # Material_Cards
 
-Material Card Design.
+Material Card Design. This library can be used to create 3 different types of cards implemented using extended typescript.
 
-## Usage Instructions
+Three cards :
 
-1. Import files and code dependencies
+1. Filled Card
+2. Outlined Card
+3. Elevated Card
+
+## Instructions for use
+
+
+1. You need to import the following:
 
 ```ets
 import {button,CardModel,CardType,MediaIconPosition,MaterialCard} from '@ohos/material-card'
@@ -29,14 +36,17 @@ private model : CardModel =new CardModel('Title' , 'Subtitle')
    
 MaterialCard({
           model : this.subHead
-            })
+        })
 ```
 Note : To change the Type of the Card, change cardType. Default is set as 'Normal' i.e., Filled Card.
 ![Sub_Head](screenshots/subHead.png)
+
 ##Filled Card
+
 Code for Complete Filled Card. Set/Change the card default Parameters based on the requirement. 
 ```c
 private model: CardModel =new CardModel('Title' , 'subTitle')
+
 aboutToAppear(){
     this.model.setCardBackGroundColor('#ffffdef0')
     this.model.setCardType(CardType.Normal)

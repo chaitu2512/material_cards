@@ -1,3 +1,18 @@
+/*
+ * Copyright (c) 2022 Application Library Engineering Group.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import { CardModel, CardType, MediaIconPosition } from './cardModel'
 
 @Component
@@ -8,16 +23,18 @@ export struct MaterialCard {
   build() {
     Column() {
       // UI
-      if (this.model.getMediaIconPosition() == MediaIconPosition.Top) {
-        if (this.model.getMediaIcon() != undefined) {
-          Image(this.model.getMediaIcon())
-            .objectFit(ImageFit.Cover)
-            .width(this.model.getMediaIconWidth())
-            .height(this.model.getMediaIconHeight())
-            .margin({ bottom: 16 })
-            .borderRadius(this.model.getBorderRadius())
+      Row() {
+        if (this.model.getMediaIconPosition() == MediaIconPosition.Top) {
+          if (this.model.getMediaIcon() != undefined) {
+            Image(this.model.getMediaIcon())
+              .objectFit(ImageFit.Cover)
+              .width(this.model.getMediaIconWidth())
+              .height(this.model.getMediaIconHeight())
+              .margin({ bottom: 16 })
+              .borderRadius(this.model.getBorderRadius())
+          }
         }
-      }
+      }.width(this.model.getCardWidth())
       Row() {
         //Icon that comes ahead of title
         if (this.model.getLeadingIcon() != undefined && this.model.getMediaIconPosition() != MediaIconPosition.Right) {
