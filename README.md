@@ -38,12 +38,15 @@ Call the corresponding function of the Model
  this.subHead.setLeadingIconWidth(64)
 ```
 Note : To change the Type of the Card, change cardType. Default is set as 'Normal' i.e., Filled Card.
+
 ![Sub_Head](screenshots/subHead.png)
 
 ##Filled Card
 
 Code for Complete Filled Card. Set/Change the card default Parameters based on the requirement. 
+
 ```ets
+
 private model: CardModel =new CardModel('Title' , 'subTitle')
 
 aboutToAppear(){
