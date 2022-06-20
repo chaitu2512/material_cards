@@ -41,7 +41,7 @@ Note : To change the Type of the Card, change cardType. Default is set as 'Norma
 
 ![Sub_Head](screenshots/subHead.png)
 
-##Filled Card
+#Filled Card
 
 Code for Complete Filled Card. Set/Change the card default Parameters based on the requirement. 
 
