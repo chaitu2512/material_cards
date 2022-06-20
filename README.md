@@ -94,7 +94,7 @@ Note: To change the position of the  Media Icon Image, change MediaIconPosition.
 ```ets
 this.model.setMediaIconPosition(MediaIconPosition.Top) 
 ```
-All the Variables can be reset to their default values
+All the Variables can be reset to their default values by call reset function.
 ```ets
 this.model.reset()
 ```
@@ -159,7 +159,7 @@ build(){
 ```ets
   private filledCard : CardModel = new CardModel('Movie Name','SubHead')
 
-aboutToAppear() {
+``aboutToAppear() {
     this.filledCard.setMediaIconPosition(MediaIconPosition.Right)
     this.filledCard.setCardHeight(180)
     this.filledCard.setCardWidth(300)
