@@ -385,7 +385,7 @@ export class CardModel extends Properties {
     return this.actions
   }
 
-  resetModel() : CardModel {
+  reset() : CardModel {
     this.setCardType(CardType.Normal)
     this.setCardBorderWidth(2)
     this.setCardBorderColor(Color.Blue)

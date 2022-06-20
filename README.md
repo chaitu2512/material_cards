@@ -18,16 +18,16 @@ import {button,CardModel,CardType,MediaIconPosition,MaterialCard} from '@ohos/ma
 ```
 2. Initialize CardModel model data
 
-```
+```ets
 private model : CardModel =new CardModel('Title' , 'Subtitle')
 ```
 3. Code for creating a basic Outlined Card. Set the Card Parameters based on the requirement.
-```
+```ets
  private subHead : CardModel = new CardModel('Title' , 'Subtitle')
 ```
 Call the corresponding function of the Model
 
-```c
+```ets
  this.subHead.setCardHeight(90)
  this.subHead.setCardWidth(300)
  this.subHead.setCardType(CardType.Outlined)
@@ -43,7 +43,7 @@ Note : To change the Type of the Card, change cardType. Default is set as 'Norma
 ##Filled Card
 
 Code for Complete Filled Card. Set/Change the card default Parameters based on the requirement. 
-```c
+```ets
 private model: CardModel =new CardModel('Title' , 'subTitle')
 
 aboutToAppear(){
@@ -87,14 +87,17 @@ build() {
 Button can be added to the Card in the form an array. Passing Parameter layout is given below:
 
 Note : 'isText'  is a boolean, if set 'true' the, button is in the form of only Text. 'false' will set it as 
-```c
+```ets
     button1 : button.Model = new this.button.Model(buttonText,isText,fontColor,buttonColor,fontSize,ButtonType,buttonHeight,buttonWidth)
 ```
 Note: To change the position of the  Media Icon Image, change MediaIconPosition. Default is set as 'Middle'. 
-```c
+```ets
 this.model.setMediaIconPosition(MediaIconPosition.Top) 
 ```
-All the Variable
+All the Variables can be reset to their default values
+```ets
+this.model.reset()
+```
 ##Elevated Card 
 ```c
 private rightImageModel : CardModel = new CardModel('Play Relaxing Songs', 'Song Name')
@@ -127,7 +130,7 @@ build() {
 #Few More Examples
 
 Outlined Card
-```c
+```ets
   private album : CardModel = new CardModel('Breaking Podcast', 'Size of Song')
   aboutToAppear(){
     this.album.setMediaIconPosition(MediaIconPosition.Top)
@@ -153,7 +156,7 @@ build(){
 
 #Filled Right size Card
 
-```c
+```ets
   private filledCard : CardModel = new CardModel('Movie Name','SubHead')
 
 aboutToAppear() {

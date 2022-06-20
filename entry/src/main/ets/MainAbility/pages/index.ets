@@ -64,7 +64,7 @@ struct Index {
   }
 
   private SubHead(model: CardModel) {
-    model.resetModel()
+    model.reset()
     model.setCardType(CardType.Outlined)
     model.setCardBorderWidth(3)
     model.setLeadingIcon($r('app.media.disneylogo'))
