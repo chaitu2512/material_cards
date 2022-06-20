@@ -94,6 +94,7 @@ Note: To change the position of the  Media Icon Image, change MediaIconPosition.
 ```c
 this.model.setMediaIconPosition(MediaIconPosition.Top) 
 ```
+All the Variable
 ##Elevated Card 
 ```c
 private rightImageModel : CardModel = new CardModel('Play Relaxing Songs', 'Song Name')
@@ -183,3 +184,14 @@ build(){
 
 ![filledCard](screenshots/filledCardRight.png)
 
+##Compatability
+
+Supports OpenHarmony API version 8
+
+##Open Source License
+
+Licensed under Apache-2.0 license
+
+##Reference:
+
+Design by : Chaitanya P.

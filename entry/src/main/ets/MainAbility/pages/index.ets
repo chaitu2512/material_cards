@@ -64,6 +64,7 @@ struct Index {
   }
 
   private SubHead(model: CardModel) {
+    model.resetModel()
     model.setCardType(CardType.Outlined)
     model.setCardBorderWidth(3)
     model.setLeadingIcon($r('app.media.disneylogo'))
@@ -125,7 +126,6 @@ struct Index {
     model.setButtonClick(this.OnClick)
     model.setActionClick(this.OnClick)
   }
-
   aboutToAppear() {
     //Elevated Card
     this.Elevated(this.model)
