@@ -79,10 +79,11 @@ export struct MaterialCard {
       }
       if (this.model.getSupportingText() != "") {
         Text(this.model.getSupportingText())
-          .fontSize(15)
-          .fontWeight(FontWeight.Normal)
+          .fontSize(this.model.getSupportingTextFontSize())
+          .fontWeight(this.model.getSupportingTextFontWeight())
           .margin(8)
           .alignSelf(ItemAlign.Start)
+          .fontColor(this.model.getSupportingTextFontColor())
       }
       if (this.model.getShowDivider()) {
         Divider().margin(4).strokeWidth(1)

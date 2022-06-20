@@ -4,7 +4,7 @@ Material Card Design. This library can be used to create 3 different types of ca
 
 Three cards :
 
-1. Filled Card
+1. Filled Card (Default)
 2. Outlined Card
 3. Elevated Card
 
@@ -23,8 +23,11 @@ private model : CardModel =new CardModel('Title' , 'Subtitle')
 ```
 3. Code for creating a basic Outlined Card. Set the Card Parameters based on the requirement.
 ```
- private subHead : CardModel =new CardModel('Title' , 'Subtitle')
- 
+ private subHead : CardModel = new CardModel('Title' , 'Subtitle')
+```
+Call the corresponding function of the Model
+
+```c
  this.subHead.setCardHeight(90)
  this.subHead.setCardWidth(300)
  this.subHead.setCardType(CardType.Outlined)
@@ -33,10 +36,6 @@ private model : CardModel =new CardModel('Title' , 'Subtitle')
  this.subHead.setCardBackGroundColor('#ffece5e5')
  this.subHead.setLeadingIconHeight(64)
  this.subHead.setLeadingIconWidth(64)
-   
-MaterialCard({
-          model : this.subHead
-        })
 ```
 Note : To change the Type of the Card, change cardType. Default is set as 'Normal' i.e., Filled Card.
 ![Sub_Head](screenshots/subHead.png)

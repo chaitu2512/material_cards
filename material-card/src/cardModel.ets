@@ -124,6 +124,9 @@ export class CardModel extends Properties {
   private mediaIconHeight: number = 144
 
   private supportingText: string | Resource = ""
+  private supportingTextFontSize: number = 15
+  private supportingTextFontColor: string | Resource | Color = Color.Black
+  private supportingTextFontWeight: FontWeight = FontWeight.Medium
 
   private showDivider: boolean = false
 
@@ -134,12 +137,38 @@ export class CardModel extends Properties {
 
   private buttonClick: (button: button.Model) => void = undefined
   private actionClick: (action: button.Model) => void = undefined
-  private cardClick : () => void = undefined
+  private cardClick: () => void = undefined
+
+  setSupportingTextFontSize(supportingTextFontSize: number): CardModel{
+    this.supportingTextFontSize = supportingTextFontSize
+    return this
+  }
+
+  getSupportingTextFontSize(): number {
+    return this.supportingTextFontSize
+  }
+  setSupportingTextFontColor(supportingTextFontColor: string | Resource | Color): CardModel{
+    this.supportingTextFontColor = supportingTextFontColor
+    return this
+  }
+
+  getSupportingTextFontColor(): string | Resource | Color {
+    return this.supportingTextFontColor
+  }
+  setSupportingTextFontWeight(supportingTextFontWeight: FontWeight): CardModel{
+    this.supportingTextFontWeight = supportingTextFontWeight
+    return this
+  }
+
+  getSupportingTextFontWeight(): FontWeight{
+    return this.supportingTextFontWeight
+  }
 
   setCardClick(callBack: () => void) {
     this.cardClick = callBack
     return this
   }
+
   getCardClick(): () => void {
     return this.cardClick
   }
@@ -354,5 +383,51 @@ export class CardModel extends Properties {
 
   getActions(): button.Model[]{
     return this.actions
+  }
+
+  reset() : CardModel {
+    this.setCardType(CardType.Normal)
+    this.setCardBorderWidth(2)
+    this.setCardBorderColor(Color.Blue)
+    this.setBorderRadius(20)
+    this.setCardBackGroundColor(Color.White)
+    this.setShadowColor(Color.Grey)
+    this.setShadowRadius(20)
+
+    this.title = ""
+    this.titleFontSize = 25
+    this.titleFontColor = Color.Black
+    this.titleFontWeight = FontWeight.Bold
+
+    this.subTitle = ""
+    this.subTitleFontSize = 15
+    this.subTitleFontColor = Color.Black
+    this.subTitleFontWeight = FontWeight.Normal
+
+    this.cardHeight = 540
+    this.cardWidth = 300
+
+    this.leadingIcon = undefined
+    this.leadingIconWidth = 64
+    this.leadingIconHeight = 64
+
+    this.mediaIconPosition = MediaIconPosition.Middle
+    this.mediaIcon = undefined
+    this.mediaIconWidth = 300
+    this.mediaIconHeight = 144
+
+    this.supportingText = ""
+
+    this.showDivider = false
+
+    this.buttonHeader = ""
+    this.buttons = []
+
+    this.actions = []
+
+    this.buttonClick = undefined
+    this.actionClick = undefined
+    this.cardClick = undefined
+    return this
   }
 }
