@@ -140,7 +140,7 @@ export class CardModel extends Properties {
   private cardClick: () => void = undefined
 
   setSupportingTextFontSize(supportingTextFontSize: number): CardModel{
-    this.supportingTextFontSize = supportingTextFontSize
+    this.supportingTextFontSize = supportingTextFontSize != null ? supportingTextFontSize : 15
     return this
   }
 
@@ -148,7 +148,7 @@ export class CardModel extends Properties {
     return this.supportingTextFontSize
   }
   setSupportingTextFontColor(supportingTextFontColor: string | Resource | Color): CardModel{
-    this.supportingTextFontColor = supportingTextFontColor
+    this.supportingTextFontColor = supportingTextFontColor ! = null ? supportingTextFontColor: Color.Black
     return this
   }
 
@@ -156,7 +156,7 @@ export class CardModel extends Properties {
     return this.supportingTextFontColor
   }
   setSupportingTextFontWeight(supportingTextFontWeight: FontWeight): CardModel{
-    this.supportingTextFontWeight = supportingTextFontWeight
+    this.supportingTextFontWeight = supportingTextFontWeight != null ? supportingTextFontWeight: FontWeight.Medium
     return this
   }
 
@@ -202,7 +202,7 @@ export class CardModel extends Properties {
   }
 
   setTitleFontSize(titleFontSize: number) {
-    this.titleFontSize = titleFontSize
+    this.titleFontSize = titleFontSize != null ? titleFontSize : 15
     return this
   }
 
@@ -211,7 +211,7 @@ export class CardModel extends Properties {
   }
 
   setTitleFontColor(titleFontColor: string | Resource | Color) {
-    this.titleFontColor = titleFontColor
+    this.titleFontColor = titleFontColor != null ? titleFontColor : Color.Black
     return this
   }
 
@@ -220,7 +220,7 @@ export class CardModel extends Properties {
   }
 
   setTitleFontWeight(titleFontWeight: FontWeight) {
-    this.titleFontWeight = titleFontWeight
+    this.titleFontWeight = titleFontWeight != null ? titleFontWeight : FontWeight.Bolder
     return this
   }
 
@@ -233,7 +233,7 @@ export class CardModel extends Properties {
   }
 
   setSubTitleFontSize(subTitleFontSize: number) {
-    this.subTitleFontSize = subTitleFontSize
+    this.subTitleFontSize = subTitleFontSize != null ? subTitleFontSize : 15
     return this
   }
 
@@ -242,7 +242,7 @@ export class CardModel extends Properties {
   }
 
   setSubTitleFontColor(subTitleFontColor: string | Resource | Color) {
-    this.subTitleFontColor = subTitleFontColor
+    this.subTitleFontColor = subTitleFontColor != null ? subTitleFontColor : Color.Black
     return this
   }
 
@@ -251,7 +251,7 @@ export class CardModel extends Properties {
   }
 
   setSubTitleFontWeight(subTitleFontWeight: FontWeight) {
-    this.subTitleFontWeight = subTitleFontWeight
+    this.subTitleFontWeight = subTitleFontWeight != null ? subTitleFontWeight : FontWeight.Normal
     return this
   }
 
@@ -340,7 +340,7 @@ export class CardModel extends Properties {
   }
 
   setSupportingText(supportingText: string | Resource): CardModel{
-    this.supportingText = supportingText
+    this.supportingText = supportingText != null? supportingText : ""
     return this
   }
 
@@ -368,7 +368,7 @@ export class CardModel extends Properties {
   }
 
   setButtons(buttons: button.Model[]): CardModel{
-    this.buttons = buttons
+    this.buttons = buttons != null ? buttons : []
     return this
   }
 
@@ -377,7 +377,7 @@ export class CardModel extends Properties {
   }
 
   setActions(actions: button.Model[]): CardModel{
-    this.actions = actions
+    this.actions = actions != null ? actions : []
     return this
   }
 
@@ -403,6 +403,11 @@ export class CardModel extends Properties {
     this.subTitleFontSize = 15
     this.subTitleFontColor = Color.Black
     this.subTitleFontWeight = FontWeight.Normal
+
+    this.supportingText = ""
+    this.supportingTextFontSize = 15
+    this.supportingTextFontColor = Color.Black
+    this.supportingTextFontWeight = FontWeight.Medium
 
     this.cardHeight = 540
     this.cardWidth = 300
